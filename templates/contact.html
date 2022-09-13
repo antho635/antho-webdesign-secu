@@ -1,0 +1,38 @@
+{% extends 'portfolio/base_pr.html' %}
+{% load static %}
+
+{% block content %}
+    <!--===== separateur =====-->
+<div class="separateur">
+</div>
+
+    <div class="container" style="flex-direction:column;">
+            <div>
+                <h1 class="text-center">Contact</h1>
+            </div>
+            <!-- ======= Contact Section ======= -->
+            <form method="POST" class="form-group" name="contactFormHome">
+                {% csrf_token %}
+
+                <div class="form-item">
+                    <label for="name">Nom</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+
+                <div class="form-item">
+                    <label for="email">Votre Email</label>
+                    <input type="email" class="form-control email-input" id="email" name="email" aria-describedby="emailHelp">
+                </div>
+
+                <div class="form-item">
+                    <label for="message">Message</label>
+                    <input type="text" class="form-control" id="message" name="message">
+                </div>
+
+                <button type="submit" class="btn btn-success">Submit</button>
+
+            </form>
+
+        </div>
+
+{%  endblock %}
