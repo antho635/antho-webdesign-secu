@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Header
  */
@@ -120,4 +121,18 @@ a:hover:after {
   height: 100%;
   margin: auto;
   flex-direction: row;
+}
+
+/* Élément | http://127.0.0.1:8000/blog/index/ */
+.list-group {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  flex-direction: column;
+}
+
+.gap-3 {
+  height: 200px;
+  margin: 50px auto;
+  width: 50%;
 }

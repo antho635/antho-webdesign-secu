@@ -2204,3 +2204,18 @@ div.btn {
   float: right;
   margin-right: 50px;
 }
+
+/* Élément | http://127.0.0.1:8000/blog/index/ */
+.list-group {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  flex-direction: column;
+}
+
+/* bootstrap.min.css | https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css */
+.gap-3 {
+  height: 200px;
+  margin: 50px auto;
+  width: 50%;
+}
