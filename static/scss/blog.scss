@@ -260,3 +260,24 @@ h1, h2, h3, h4, h5, h6 {
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+
+/* home.css | http://127.0.0.1:8000/static/build/css/home.css */
+
+div.container:nth-child(2) {
+  width: 90%;
+}
+
+/* blog.css | http://127.0.0.1:8000/static/build/css/blog.css */
+
+.card {
+  /* width: 35%; */
+  width: 100%;
+  flex-direction: column;
+}
+
+.card-body {
+  /* width: 33%; */
+  width: auto;
+  flex-direction: column;
+}
