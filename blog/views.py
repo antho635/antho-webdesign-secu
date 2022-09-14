@@ -1,11 +1,16 @@
 from django.shortcuts import render
 
 from django.views import generic
+
 from .models import Post
 
 
 def index_blog(request):
     return render(request, 'blog/index_blog.html')
+
+
+def index_test(request):
+    return render(request, 'blog/index_test.html')
 
 
 class PostList(generic.ListView):

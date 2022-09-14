@@ -1,0 +1,289 @@
+{% extends 'blog/base_blog.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+:root {
+  --main-font: "Lato", sans-serif;
+  --secondary-font: "Playfair Display", serif;
+  --main-bg: #f4f4f1;
+  --selection-bg: #fffaa3;
+  --grey: #6a6a6a;
+  --dark: #444;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+*::selection {
+  background-color: var(--selection-bg);
+}
+
+body {
+  margin-top: 30px;
+  background-color: var(--main-bg);
+  letter-spacing: 0.5px;
+}
+
+img {
+  width: 100%;
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* :: card :: */
+.card {
+  max-width: 850px;
+  width: 95%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 40px;
+}
+.card__thumb {
+  overflow: hidden;
+  background-color: var(--grey);
+}
+.card__thumb:hover img {
+  transform: scale(1.1);
+}
+.card__content {
+  position: relative;
+  background-color: white;
+  padding: 45px;
+  text-align: center;
+}
+.card__title {
+  font-family: var(--secondary-font);
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 400;
+}
+.card__title:hover {
+  color: var(--grey);
+}
+.card__text {
+  font-family: var(--main-font);
+  color: var(--dark);
+  line-height: 25px;
+}
+.card__btn {
+  border: none;
+  background: var(--dark);
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card__btn:focus-visible, .card__btn:focus, .card__btn:active {
+  background-color: var(--grey);
+}
+
+/* :: utilities :: */
+.animate {
+  transition: all 0.3s ease;
+}
+
+/* :: mediaqueries :: */
+@media (min-width: 680px) {
+  .card {
+    grid-template-columns: auto minmax(100px, 470px) auto;
+    grid-template-rows: repeat(2, 1fr) auto auto;
+  }
+  .card__thumb {
+    max-width: 700px;
+    justify-self: center;
+    grid-area: 1/1/-2/-1;
+  }
+  .card__content {
+    grid-area: 3/2/-1/-2;
+  }
+}
+@media (min-width: 900px) {
+  .card {
+    grid-template-columns: auto 70px minmax(100px, 400px);
+    grid-template-rows: repeat(3, auto);
+  }
+  .card:nth-child(even) {
+    grid-template-columns: minmax(100px, 400px) 70px auto;
+  }
+  .card__thumb {
+    grid-area: 1/1/-1/3;
+  }
+  .card:nth-child(even) .card__thumb {
+    grid-area: 1/2/-1/-1;
+  }
+  .card__content {
+    grid-area: 2/2/-2/-1;
+    text-align: left;
+  }
+  .card:nth-child(even) .card__content {
+    text-align: left;
+    grid-area: 2/1/-2/3;
+  }
+}
+</style>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=1"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=2"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=3"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=4"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=5"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt officiis ad.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=6"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur,.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=7"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur,.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=8"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=9"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=10"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=11"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=12"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt officiis ad repellendus pariatur eligendi tempora praesentium.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=13"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=14"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=15"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt officiis ad repellendus pariatur.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=16"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt officiis ad repellendus pariatur eligendi tempora.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=17"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur, quos sunt officiis ad repellendus pariatur.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=18"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic,.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+<div class="card">
+  <div class="card__thumb"><a href="javascript:;"><img class="animate" src="https://picsum.photos/800?random=19"/></a></div>
+  <div class="card__content">
+    <h2 class="card__title animate"><a href="javascript:;">Card Title</a></h2>
+    <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis eaque necessitatibus, explicabo vero hic, perspiciatis unde minus error consectetur,.</p>
+    <button class="card__btn"><i class="fa-solid fa-arrow-right fa-fw"></i></button>
+  </div>
+</div>
+
+{% endblock %}
