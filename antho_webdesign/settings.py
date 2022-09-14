@@ -119,3 +119,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DEFAULT_FROM_EMAIL = "kipik@toutchy.com"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
