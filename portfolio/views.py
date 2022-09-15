@@ -2,6 +2,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import ContactForm
+from .models import Contact
 
 
 def contactView(request):
@@ -23,6 +24,17 @@ def contactView(request):
 
 def successView(request):
     return HttpResponse("Success! Thank you for your message.")
+
+
+def contact_form(request):
+    name = request.POST.get('name')
+    email = request.POST.get('email')
+    message = request.POST.get('message')
+    date_send = request.POST.get('date_send')
+    email = Contact.objects.create(name=name, email=email, message=message, date_send=date_send)
+    email.save()
+
+    return render(request, 'portfolio/contact/contactForm.html', {'email': email})
 
 
 # Index

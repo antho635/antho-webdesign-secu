@@ -1,32 +1,39 @@
-{% extends 'base.html' %}
+{% extends 'portfolio/base_pr.html' %}
 {% load static %}
 
 {% block content %}
 <main id="main">
     <div class="container">
+        <h1 class="text-center mt-5">Contact</h1>
         <div class="row">
             <!-- ======= Contact Section ======= -->
             <form class="form-group" name="contactForm">
                 {% csrf_token %}
-                {{ form.as_p }}
-              <!--
+
                 <div class="form-item">
-                    <label for="nom">Nom</label>
-                    <input type="text" class="form-control" id="nom" name="nom">
+                    <div class="lbl">
+                        <label for="name">Name</label>
+                    </div>
+                    <input type="text" class="form-control input" id="name" name="name">
                 </div>
 
                 <div class="form-item">
-                    <label for="email">Email address</label>
+                    <div class="lbl">
+                        <label for="email">Email</label>
+                    </div>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
                 </div>
 
                 <div class="form-item">
-                    <label for="message">Message</label>
-                    <input type="text" class="form-control" id="message" name="message">
+                    <div class="lbl">
+                        <label for="message">Message</label>
+                    </div>
+                    <textarea class="form-control" id="message" name="message" rows="3"></textarea>
                 </div>
-                -->
 
-                <button type="submit" class="btn btn-form">Submit</button>
+                <div class="form-item">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
 
             </form>
           </div>

@@ -291,3 +291,22 @@ div.form-item {
 label {
   margin-right: 25px;
 }
+
+
+/* Élément | http://127.0.0.1:8000/ */
+
+div.flex-slide > div > a {
+  color: #fff;
+}
+
+div.flex-slide > div > a:hover {
+  color: #686EE4FF;
+}
+
+div.flex-slide > div > ul > li > a {
+  color: #fff;
+}
+
+div.flex-slide > div > ul > li > a:hover {
+  color: #686EE4FF;
+}
