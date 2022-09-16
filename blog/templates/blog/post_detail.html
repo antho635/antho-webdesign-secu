@@ -6,9 +6,20 @@
       <div class="row">
         <div class="col-md-8 card mb-4  mt-3 left  top">
           <div class="card-body">
-            <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
-            <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
-            <p class="card-text ">{{ object.content | safe }}</p>
+          <!-- Titre du blog -->
+            <h1>
+                {% block title %}
+                    {{ object.title }}
+                {% endblock title %}
+            </h1>
+          <!-- auteur et date de l'article du blog -->
+            <p class=" text-muted">
+                {{ post.author }} | {{ post.created_on }}
+            </p>
+          <!-- contenu de l'article du blog -->
+            <p class="card-text ">
+                {{ object.content | safe }}
+            </p>
                 <a class="btn btn-warning" href="{% url 'list_post' %}">Retour</a>
 
           </div>
