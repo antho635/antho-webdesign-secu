@@ -6,5 +6,5 @@ urlpatterns = [
     path('portfolio/', index, name='index_portfolio'),
     # path("contact/", contactView, name="contact"),
     path("success/", success_view, name="success"),
-    path("contact/", contact_form, name="contact_form"),
+    # path("contact/", contact_form, name="contact_form"),
 ]

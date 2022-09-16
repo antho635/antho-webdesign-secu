@@ -1,0 +1,26 @@
+{% extends 'portfolio/base_pr.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+    input[type=text], input[type=email], textarea
+    {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+    }
+    </style>
+    <main id="main">
+        <div class="container">
+            <h1 class="text-center mt-5">Contact Ici</h1>
+            <div class="row">
+                <form action="" method="post">
+                   {% csrf_token %}
+                   {{ form }}
+                   <input type="submit" value="Envoyer">
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}

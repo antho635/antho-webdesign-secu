@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'portfolio',
     'django_sass_compiler',
     'blog',
+    'contact',
 ]
 
 MIDDLEWARE = [
