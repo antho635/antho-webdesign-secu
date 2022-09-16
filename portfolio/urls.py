@@ -1,10 +1,10 @@
 from django.urls import path
-from portfolio.views import eco_demenagement, index, contactView, successView, contact_form
+from portfolio.views import eco_demenagement, index, contact_form, success_view
 
 urlpatterns = [
     path('projet/eco_demenagement/', eco_demenagement, name="eco-demenagement"),
     path('portfolio/', index, name='index_portfolio'),
     # path("contact/", contactView, name="contact"),
-    path("success/", successView, name="success"),
+    path("success/", success_view, name="success"),
     path("contact/", contact_form, name="contact_form"),
 ]

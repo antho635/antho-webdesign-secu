@@ -22,7 +22,7 @@ def contactView(request):
     return render(request, "email.html", {"form": form})
 
 
-def successView(request):
+def success_view(request):
     return HttpResponse("Success! Thank you for your message.")
 
 
