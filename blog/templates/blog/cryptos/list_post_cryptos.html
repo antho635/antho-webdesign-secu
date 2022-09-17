@@ -1,10 +1,10 @@
-{% extends 'blog/base_blog.html' %}
+list_post.html{% extends 'blog/base_blog.html' %}
 {% load static %}
 
 {% block content %}
     <style>
 
-        div.container:nth-child(3) {
+        .box-blog {
           flex-wrap: wrap;
           display: flex;
           width: 100%;
@@ -23,6 +23,10 @@
           width: 100%;
         }
 
+        h1.text-center {
+          margin-top: 80px;
+        }
+
         @media (min-width: 768px) {
           .p-md-5 {
             padding: 1rem !important;
@@ -30,8 +34,8 @@
         }
 
     </style>
-<div class="container" style="flex-direction:row;">
-
+<h1 class="text-center mt-8">L'actus des cryptos</h1>
+<div class="container box-blog" style="flex-direction:row;">
   <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
     <div class="col-md-6 px-0">
       <h1 class="display-4 fst-italic">Article 1</h1>
