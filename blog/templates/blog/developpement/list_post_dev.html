@@ -71,7 +71,9 @@
 <div class="container box-blog" style="flex-direction:row;">
 
     {% for post in post_list %}
+        {% if post.category.name == 'Développement' %}
     <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+
     <p class="category">
         <strong>{{ post.category }}</strong>
     </p>
@@ -94,7 +96,9 @@
         </div>
     <p class="italic tags">{{ post.tags }}</p>
     </div>
+        {% endif %}
     {% endfor %}
+
 </div>
 
 {%  endblock %}
