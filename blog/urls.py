@@ -9,7 +9,7 @@ urlpatterns = [
     path('blog/list/', PostList.as_view(), name='list_post'),
 
     path('blog/list/developpement/', DevActus.as_view(), name='list_post_dev'),
-    path('blog/list/<slug:slug>/', DevActusDetail.as_view(), name='post_detail_dev'),
+    path('blog/list/developpement/<slug:slug>/', DevActusDetail.as_view(), name='post_detail_dev'),
 
     path('blog/list/cybersecurite/', HackActus.as_view(), name='list_post_hack'),
 
