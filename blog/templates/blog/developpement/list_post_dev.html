@@ -45,9 +45,10 @@
             <p>{{ post.author }} | {{ post.created_on}} </p>
             <p class="lead my-3">{{ post.content|slice:":400" }}...</p>
             <p class="lead mb-0">
-                 <a href="{% url 'post_detail' post.slug  %}" class="text-white fw-bold">Continué à lire &rarr;</a>
+                 <a href="{% url 'post_detail_dev' post.slug  %}" class="text-white fw-bold">Continué à lire &rarr;</a>
             </p>
         </div>
+    <p class="italic">ici tags (ex:python etc)</p>
     </div>
     {% endfor %}
 </div>

@@ -1,0 +1,85 @@
+{% extends 'blog/base_blog.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+
+.card-text {
+  color: black;
+  width: 100%;
+  display: flex;
+  max-width: none;
+  text-align: justify;
+  line-height: 2;
+  font-size: 1.3em;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
+  justify-content: center;
+  margin: auto;
+  min-width: 700px;
+}
+
+
+.col-md-8 {
+  display: flex;
+  padding: 50px;
+}
+
+.post-title {
+  color: black;
+}
+
+
+.flex-post-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Élément | http://127.0.0.1:8000/blog/list/developpement/conseils/ */
+
+.post-img {
+  width: 25%;
+  border-radius: 15px;
+}
+
+</style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 card mb-4  mt-3 left  top">
+                <div class="card-body">
+
+                    <!-- head du blog -->
+                    <div class="flex-post-head">
+                        <h1 class="post-title">
+                            {% block title %}
+                                {{ object.title }}
+                            {% endblock title %}
+                        </h1>
+                        <img class="post-img" src="https://thumbs.dreamstime.com/b/web-html-codage-site-frontend-d%C3%A9veloppement-du-langage-de-programmation-pour-le-arri%C3%A8re-plan-m%C3%A9dia-mixte-213091266.jpg"
+                             alt="img"/>
+                    </div>
+
+                    <!-- auteur et date de l'article du blog -->
+                    <p class=" text-muted">
+                        {{ post.author }} | {{ post.created_on }}
+                    </p>
+
+                    <!-- contenu de l'article du blog -->
+                    <p class="card-text ">
+                        {{ object.content | safe }}
+                    </p>
+
+                    <a class="btn btn-warning" href="{% url 'list_post_dev' %}">Retour</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{%  endblock %}

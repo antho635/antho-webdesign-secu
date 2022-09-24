@@ -32,6 +32,11 @@ def dev_actus(request):
     return render(request, 'blog/developpement/list_post_dev.html')
 
 
+class DevActusDetail(generic.DetailView):
+    model = Post
+    template_name = 'blog/developpement/post_detail_dev.html'
+
+
 def hack_actus(request):
     return render(request, 'blog/hack/list_post_hack.html')
 
