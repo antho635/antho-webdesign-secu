@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'portfolio',
-    'django_sass_compiler',
+    # 'django_sass_compiler',
     'blog',
     'contact',
 ]
@@ -121,3 +121,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_FROM_EMAIL = "kipik@toutchy.com"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+SASS_COMPILER_MAP = True
