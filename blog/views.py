@@ -13,6 +13,21 @@ def index_test(request):
     return render(request, 'blog/index_test.html')
 
 
+class PostList(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'blog/list_post.html'
+
+
+class PostDetail(generic.DetailView):
+    model = Post
+    template_name = 'blog/post_detail.html'
+
+
+class DevActus(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'blog/developpement/list_post_dev.html'
+
+
 def dev_actus(request):
     return render(request, 'blog/developpement/list_post_dev.html')
 
@@ -27,13 +42,3 @@ def cryptos_actus(request):
 
 def ia_actus(request):
     return render(request, 'blog/ia/list_post_ia.html')
-
-
-class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'blog/list_post.html'
-
-
-class PostDetail(generic.DetailView):
-    model = Post
-    template_name = 'blog/post_detail.html'

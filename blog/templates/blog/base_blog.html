@@ -9,7 +9,9 @@
     <script src="https://kit.fontawesome.com/a2a69c8064.js" crossorigin="anonymous"></script>
     <!--==== style ====-->
     <link  rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'build/css/blog.css' %}">
+    <!--
+        <link rel="stylesheet" type="text/css" href="{ static 'build/css/blog.css' }">
+        -->
     <link rel="stylesheet" type="text/css" href="{% static 'build/css/home.css' %}">
 
 </head>
@@ -33,22 +35,12 @@
                     Acceuil
                 </a>
             </li>
-          <li>
-              <a href="{% url 'index_portfolio' %}" class="active">
-                  Portfolio
-              </a>
-          </li>
 
-          <li>
-              <a href="{% url 'index_blog' %}" class="active">
-                  Blog
-              </a>
-          </li>
             <!-- ===== Dropdown ===== -->
           <li class="dropdown">
               <a href="#">
                   <span>
-                      Projets
+                      Catégories
                   </span>
               <i class="bi bi-chevron-down dropdown-indicator">
               </i>
@@ -57,98 +49,81 @@
                 <!-- eco déménagement -->
               <li>
                   <a href="{% url 'eco-demenagement' %}">
-                      €co-Déménagement
+                      Dev
                   </a>
               </li>
+
                 <!-- la cordée numérique -->
                 <li>
                   <a href="#">
-                      La cordée numérique
+                      hack
                   </a>
               </li>
+
                 <!-- pizzeria -->
               <li>
                   <a href="#">
-                      pizza
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      Oh-my-food
+                      i.a
                   </a>
               </li>
 
               <li>
                   <a href="#">
-                      Animals
+                      crypto
                   </a>
               </li>
 
-              <li>
-                  <a href="#">Sports</a>
-              </li>
-              <li>
-                  <a href="#">Travel</a>
-              </li>
-                <!-- End Dropdown -->
-
-                <!-- ===== sub Dropdown ===== -->
-              <li class="dropdown">
-                  <a href="#">
-                      <span>Sub Menu</span>
-                      <i class="bi bi-chevron-down dropdown-indicator"></i>
-                  </a>
-                <ul>
-                  <li>
-                      <a href="#">Sub Menu 1</a>
-                  </li>
-                  <li>
-                      <a href="#">Sub Menu 2</a>
-                  </li>
-                  <li>
-                      <a href="#">Sub Menu 3</a>
-                  </li>
-                </ul>
-              </li>
             </ul>
           </li>
             <!-- ===== End sub Dropdown ===== -->
-          <li>
-              <a href="#">
-                  Services
-              </a>
-          </li>
-          <li>
-              <a href="{% url 'contact' %}">
-                  Contact
-              </a>
-          </li>
+
+            <li>
+                <a href="{% url 'index_portfolio' %}" class="active">
+                    Portfolio
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'index_blog' %}" class="active">
+                    Blog home
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'contact' %}">
+                    Contact
+                </a>
+            </li>
+
         </ul>
-      </nav>
-        <!-- .navbar -->
+      </nav> <!-- .navbar -->
 
-      <div class="header-social-links">
+        <div class="header-social-links">
 
-        <a href="#" class="twitter">
-            <i class="fa fa-twitter"></i>
-        </a>
-        <a href="#" class="facebook">
-            <i class="fa fa-facebook"></i>
-        </a>
-        <a href="#" class="instagram">
-            <i class="fa fa-instagram"></i>
-        </a>
-        <a href="#" class="linkedin">
-            <i class="fa fa-linkedin"></i>
-        </a>
-      </div>
+            <a href="#" class="twitter">
+                <i class="fa fa-twitter"></i>
+            </a>
 
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+            <a href="#" class="facebook">
+                <i class="fa fa-facebook"></i>
+            </a>
+
+            <a href="#" class="instagram">
+                <i class="fa fa-instagram"></i>
+            </a>
+
+            <a href="#" class="linkedin">
+                <i class="fa fa-linkedin"></i>
+            </a>
+
+        </div>
+
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
     </div>
   </header>
-<!-- End Header -->
+    <!-- End Header -->
 {% block content %}
 {% endblock %}
 
