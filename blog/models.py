@@ -5,7 +5,7 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
     date_added = models.DateTimeField(auto_now=True, null=True, auto_created=True)
-
+    slugcat = models.SlugField(max_length=200, unique=True, null=True)
     # slug = models.SlugField(max_length=200, db_index=True)
 
     def __str__(self):
