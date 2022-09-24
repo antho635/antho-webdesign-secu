@@ -28,6 +28,11 @@ class DevActus(generic.ListView):
     template_name = 'blog/developpement/list_post_dev.html'
 
 
+class HackActus(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'blog/hack/list_post_hack.html'
+
+
 def dev_actus(request):
     return render(request, 'blog/developpement/list_post_dev.html')
 

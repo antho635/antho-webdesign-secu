@@ -28,4 +28,4 @@ static==1.1.1
 toml==0.10.2
 urllib3==1.26.12
 whitenoise==6.2.0
-libsass
+libsass==0.21.0

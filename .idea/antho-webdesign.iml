@@ -17,7 +17,7 @@
       <excludeFolder url="file://$MODULE_DIR$/env" />
       <excludeFolder url="file://$MODULE_DIR$/static" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (anthonydidio)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">

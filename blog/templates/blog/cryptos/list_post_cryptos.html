@@ -1,4 +1,4 @@
-list_post.html{% extends 'blog/base_blog.html' %}
+{% extends 'blog/base_blog.html' %}
 {% load static %}
 
 {% block content %}
@@ -33,57 +33,82 @@ list_post.html{% extends 'blog/base_blog.html' %}
           }
         }
 
-    </style>
-<h1 class="text-center mt-8">L'actus des cryptos</h1>
+
+/* Élément | http://127.0.0.1:8000/blog/list/developpement/ */
+
+.category {
+  color: #37a5d0;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+/* Élément | http://127.0.0.1:8000/blog/list/developpement/ */
+
+.tags {
+    font-style: italic;
+    color: green;
+    font-weight: bolder;
+    font-size: 1.1em;
+    float: right;
+}
+
+.titre-post {
+    text-align: center;
+    background: grey;
+    width: 100%;
+    margin: auto 0;
+}
+
+.article-content {
+    line-height: 2;
+    font-size: 1.3em;
+}
+
+@media (min-width: 768px) {
+    .p-md-5 {
+         padding: 50px !important;
+    }
+}
+</style>
+
+<h1 class="text-center">L'actus de la cyber sécurité</h1>
+
+<!--===== separateur =====-->
+<div class="separateur"></div>
+
 <div class="container box-blog" style="flex-direction:row;">
-  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Article 1</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
-    </div>
-  </div>
 
+    {% for post in post_list %}
+        {% if post.category.name == 'Cryptos' %}
     <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-        <div class="col-md-6 px-0">
-          <h1 class="display-4 fst-italic">Article 2</h1>
-          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-          <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
-        </div>
-      </div>
-    <!--===== separateur =====-->
-    <div class="separateur">
-    </div>
-    <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-        <div class="col-md-6 px-0">
-          <h1 class="display-4 fst-italic">Article 3</h1>
-          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-          <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
-        </div>
-      </div>
 
-    <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+    <p class="category">
+        <strong>{{ post.category }}</strong>
+    </p>
         <div class="col-md-6 px-0">
-          <h1 class="display-4 fst-italic">Article 4</h1>
-          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-          <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+            <h1 class="titre-post display-4 fst-italic">{{ post.title }}</h1>
+            <div class="separateur"></div>
+            <p>
+                Auteur:
+                <strong>{{ post.author }}</strong>
+            <br>
+                publié  le:
+                <strong style="font-style: italic">
+                    {{ post.created_on}}
+                </strong>
+            </p>
+            <p class="article-content lead my-3">{{ post.content|slice:":400" }}...</p>
+            <p class="lead mb-0">
+                 <a href="{% url 'post_detail_dev' post.slug  %}" class="text-white fw-bold">Continué à lire &rarr;</a>
+            </p>
         </div>
+    <p class="italic tags">{{ post.tags }}</p>
     </div>
+            {% else %}
+            <h3>Pas d'article actuelement</h3>
+        {% endif %}
+    {% endfor %}
+
 </div>
-
-
-    <div class="row-blog">
-        <!-- Blog Entries Column -->
-        {% for post in post_list %}
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-title text-dark">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text text-dark">{{ post.content|slice:":400" }}...</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Lire &rarr;</a>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
 
 {%  endblock %}
