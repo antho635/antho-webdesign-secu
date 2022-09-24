@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import PostDetail, PostList, index_test, index_blog, dev_actus, hack_actus, cryptos_actus, ia_actus, \
+
+from .views import PostDetail, PostList, index_test, index_blog, \
     DevActus, DevActusDetail, HackActus, CryptosActus, IaActus
 
 urlpatterns = [
