@@ -33,26 +33,68 @@
           }
         }
 
-    </style>
+
+/* Élément | http://127.0.0.1:8000/blog/list/developpement/ */
+
+.category {
+  color: #37a5d0;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+/* Élément | http://127.0.0.1:8000/blog/list/developpement/ */
+
+.tags {
+    font-style: italic;
+    color: green;
+    font-weight: bolder;
+    font-size: 1.1em;
+    float: right;
+}
+
+.titre-post {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.article-content {
+    line-height: 2;
+    font-size: 1.3em;
+}
+</style>
+
 <h1 class="text-center">L'actus des devs</h1>
+
+<!--===== separateur =====-->
+<div class="separateur"></div>
 
 <div class="container box-blog" style="flex-direction:row;">
 
     {% for post in post_list %}
     <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+    <p class="category">
+        <strong>{{ post.category }}</strong>
+    </p>
         <div class="col-md-6 px-0">
-            <h1 class="display-4 fst-italic">{{ post.title }}</h1>
-            <p>{{ post.author }} | {{ post.created_on}} </p>
-            <p class="lead my-3">{{ post.content|slice:":400" }}...</p>
+            <h1 class="titre-post display-4 fst-italic">{{ post.title }}</h1>
+            <div class="separateur"></div>
+            <p>
+                Auteur:
+                <strong>{{ post.author }}</strong>
+            <br>
+                publié  le:
+                <strong style="font-style: italic">
+                    {{ post.created_on}}
+                </strong>
+            </p>
+            <p class="article-content lead my-3">{{ post.content|slice:":400" }}...</p>
             <p class="lead mb-0">
                  <a href="{% url 'post_detail_dev' post.slug  %}" class="text-white fw-bold">Continué à lire &rarr;</a>
             </p>
         </div>
-    <p class="italic">ici tags (ex:python etc)</p>
+    <p class="italic tags">{{ post.tags }}</p>
     </div>
     {% endfor %}
 </div>
 
-    <!--===== separateur =====-->
-    <div class="separateur"></div>
 {%  endblock %}
