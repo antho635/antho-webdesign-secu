@@ -23,6 +23,7 @@
 body {
   font-family: var(--font-default);
   color: var(--color-default);
+  margin: 0 !important;
 }
 
 a {
@@ -47,6 +48,7 @@ h6 {
 section {
   margin: 30px auto;
 }
+
 .titre-toutchy {
   font-weight: bold;
   font-style: italic;

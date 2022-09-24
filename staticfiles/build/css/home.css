@@ -2243,6 +2243,7 @@ index test
 body {
   background-color: var(--main-bg);
   letter-spacing: 0.5px;
+  margin: 0 !important;
 }
 
 img {
@@ -2401,3 +2402,5 @@ a:hover:after {
   width: 100%;
   left: 0;
 }
+
+/*# sourceMappingURL=../build/css/home.css.map */

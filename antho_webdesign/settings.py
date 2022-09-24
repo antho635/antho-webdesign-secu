@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'portfolio',
-    # 'django_sass_compiler',
+    'django_sass_compiler',
     'blog',
     'contact',
 ]
