@@ -63,16 +63,20 @@
                                 {{ post.title }}
                             {% endblock title %}
                         </h1>
+
                     {% if post.category.name == 'Développement' or post.category.name == 'Programmation' %}
                         <img class="post-img" src="https://thumbs.dreamstime.com/b/web-html-codage-site-frontend-d%C3%A9veloppement-du-langage-de-programmation-pour-le-arri%C3%A8re-plan-m%C3%A9dia-mixte-213091266.jpg"
                              alt="img"/>
-                    {% elif post.category.name == 'Hack'%}
-                        <img class="animate" src="https://www.confiance-numerique.fr/wp-content/uploads/2017/05/cyberattaque.jpg" alt="img"/>
-                    {% elif post.category.name == 'Cryptos'%}
-                         <img class="animate" src="https://ae01.alicdn.com/kf/H288775288a7c4a368ab426788e4f27e4n/Tezos-pi-ce-de-monnaie-XTZ-en-forme-de-cryptomonnaie-en-plaqu-or-pour-la-d.jpg_Q90.jpg_.webp"
-                         alt="img"/>
-                    {% elif post.category.name == 'Intelligence-artificielle'%}
-                        <img class="animate" src="https://www.ifop.com/wp-content/uploads/2021/01/intelligence-artificielle-e1611834493481.jpeg" alt="img"/>
+
+                        {% elif post.category.name == 'Hack'%}
+                            <img class="animate" src="https://www.confiance-numerique.fr/wp-content/uploads/2017/05/cyberattaque.jpg" alt="img"/>
+
+                        {% elif post.category.name == 'Cryptos'%}
+                             <img class="animate" src="https://ae01.alicdn.com/kf/H288775288a7c4a368ab426788e4f27e4n/Tezos-pi-ce-de-monnaie-XTZ-en-forme-de-cryptomonnaie-en-plaqu-or-pour-la-d.jpg_Q90.jpg_.webp"
+                             alt="img"/>
+
+                        {% elif post.category.name == 'Intelligence-artificielle'%}
+                            <img class="animate" src="https://www.ifop.com/wp-content/uploads/2021/01/intelligence-artificielle-e1611834493481.jpeg" alt="img"/>
 
                     {% endif %}
                     </div>
