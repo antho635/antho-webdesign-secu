@@ -49,7 +49,7 @@ def dev_actus(request):
 
 class DevActusDetail(generic.DetailView):
     model = Post
-    template_name = 'blog/developpement/post_detail_dev.html'
+    template_name = 'blog/post_detail.html'
 
 
 def hack_actus(request):
