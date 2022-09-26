@@ -14,7 +14,7 @@
 
 <body class="bg-dark">
 <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
+<header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
     {% load static %}
       <a href="{% url 'home' %}" class="logo d-flex align-items-center  me-auto me-lg-0">
@@ -38,111 +38,91 @@
                   <span>
                       Projets
                   </span>
-              <i class="bi bi-chevron-down dropdown-indicator">
-              </i>
+              <i class="bi bi-chevron-down dropdown-indicator"></i>
           </a>
             <ul>
                 <!-- eco déménagement -->
-              <li>
-                  <a href="{% url 'eco-demenagement' %}">
-                      €co-Déménagement
-                  </a>
-              </li>
+                <li>
+                    <a href="{% url 'eco-demenagement' %}">
+                        €co-Déménagement
+                    </a>
+                </li>
                 <!-- la cordée numérique -->
                 <li>
-                  <a href="#">
+                    <a href="#">
                       La cordée numérique
-                  </a>
-              </li>
+                    </a>
+                </li>
                 <!-- pizzeria -->
-              <li>
-                  <a href="#">
-                      pizza
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      Oh-my-food
-                  </a>
-              </li>
-
-              <li>
-                  <a href="#">
-                      Animals
-                  </a>
-              </li>
-
-              <li>
-                  <a href="#">Sports</a>
-              </li>
-              <li>
-                  <a href="#">Travel</a>
-              </li>
+                <li>
+                    <a href="#">
+                        pizza
+                    </a>
+                </li>
                 <!-- End Dropdown -->
 
                 <!-- ===== sub Dropdown ===== -->
-              <li class="dropdown">
-                  <a href="#">
-                      <span>Sub Menu</span>
-                      <i class="bi bi-chevron-down dropdown-indicator"></i>
-                  </a>
-                <ul>
-                  <li>
-                      <a href="#">Sub Menu 1</a>
-                  </li>
-                  <li>
-                      <a href="#">Sub Menu 2</a>
-                  </li>
-                  <li>
-                      <a href="#">Sub Menu 3</a>
-                  </li>
-                </ul>
-              </li>
+                <li class="dropdown">
+                    <a href="#">
+                        <span>Sub Menu</span>
+                        <i class="bi bi-chevron-down dropdown-indicator"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#">Sub Menu 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Sub Menu 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Sub Menu 3</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
           </li>
-            <!-- ===== End sub Dropdown ===== -->
+          <!-- ===== End sub Dropdown ===== -->
           <li>
-              <a href="#">
-                  Services
-              </a>
+              <a href="#">Services</a>
           </li>
           <li>
-              <a href="{% url 'contact' %}">
-                  Contact
-              </a>
+              <a href="{% url 'contact' %}">Contact</a>
           </li>
         </ul>
       </nav>
-        <!-- .navbar -->
+      <!-- .navbar -->
 
       <div class="header-social-links">
+          <!--
+          <a href="#" class="twitter">
+              <i class="fa fa-twitter"></i>
+          </a>
 
-        <a href="#" class="twitter">
-            <i class="fa fa-twitter"></i>
-        </a>
-        <a href="#" class="facebook">
+          <a href="#" class="facebook">
             <i class="fa fa-facebook"></i>
-        </a>
-        <a href="#" class="instagram">
-            <i class="fa fa-instagram"></i>
-        </a>
-        <a href="#" class="linkedin">
-            <i class="fa fa-linkedin"></i>
-        </a>
+          </a>
+          -->
+          <a href="#" class="instagram">
+              <i class="fa fa-instagram"></i>
+          </a>
+
+          <a href="#" class="linkedin">
+              <i class="fa fa-linkedin"></i>
+          </a>
       </div>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
     </div>
-  </header>
-<!-- End Header -->
+</header>
+<!-- .End Header -->
 {% block content %}
 {% endblock %}
 
-<!--===== separateur =====-->
-<div class="separateur">
-</div>
+<!-- separateur -->
+<div class="separateur"></div>
+
 <!-- ======= Footer ======= -->
 <footer class="bg-dark text-center text-white">
   <!-- Grid container -->
