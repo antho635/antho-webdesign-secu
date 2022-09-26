@@ -2,73 +2,69 @@
 {% load static %}
 
 {% block content %}
-    <style>
-
-        .box-blog {
-          flex-wrap: wrap;
-          display: flex;
-          width: 100%;
-          margin: 100px auto;
-          padding: 0;
-          flex-direction: row;
-          justify-content: space-around;
-        }
-
-        div.p-md-5 {
-          width: 40%;
-            border: solid 1px ;
-        }
-
-        div.p-md-5 > div {
-          width: 100%;
-        }
-
-        h1.text-center {
-          margin-top: 80px;
-        }
-
-        @media (min-width: 768px) {
-          .p-md-5 {
-            padding: 1rem !important;
-          }
-        }
-
-
-/* Élément | http://127.0.0.1:8000/blog/list/developpement/ */
-
-.category {
-  color: #37a5d0;
-  font-size: 1.1em;
-  font-weight: bold;
-}
-
-/* Élément | http://127.0.0.1:8000/blog/list/developpement/ */
-
-.tags {
-    font-style: italic;
-    color: green;
-    font-weight: bolder;
-    font-size: 1.1em;
-    float: right;
-}
-
-.titre-post {
-    text-align: center;
-    background: grey;
-    width: 100%;
-    margin: auto 0;
-}
-
-.article-content {
-    line-height: 2;
-    font-size: 1.3em;
-}
-
-@media (min-width: 768px) {
-    .p-md-5 {
-         padding: 50px !important;
+<style>
+    .box-blog {
+        flex-wrap: wrap;
+        display: flex;
+        width: 100%;
+        margin: 100px auto;
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-around;
     }
-}
+
+    div.p-md-5 {
+        width: 40%;
+        border: solid 1px ;
+    }
+
+    div.p-md-5 > div {
+        width: 100%;
+    }
+
+    h1.text-center {
+        margin-top: 80px;
+    }
+
+    .category {
+      color: #37a5d0;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    /* Élément | http://127.0.0.1:8000/blog/list/developpement/ */
+
+    .tags {
+        font-style: italic;
+        color: green;
+        font-weight: bolder;
+        font-size: 1.1em;
+        float: right;
+    }
+
+    .titre-post {
+        text-align: center;
+        background: grey;
+        width: 100%;
+        margin: auto 0;
+    }
+
+    .article-content {
+        line-height: 2;
+        font-size: 1.3em;
+    }
+
+    @media (min-width: 768px) {
+        .p-md-5 {
+            padding: 1rem !important;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .p-md-5 {
+             padding: 50px !important;
+        }
+    }
 </style>
 
 <h1 class="text-center">L'actus des devs</h1>
@@ -91,11 +87,9 @@
                     <p>
                         Auteur:
                         <strong>{{ post.author }}</strong>
-                    <br>
+                        <br>
                         publié  le:
-                        <strong style="font-style: italic">
-                            {{ post.created_on}}
-                        </strong>
+                        <strong style="font-style: italic">{{ post.created_on}}</strong>
                     </p>
                     <p class="article-content lead my-3">{{ post.content|slice:":400" }}...</p>
                     <p class="lead mb-0">
@@ -104,9 +98,8 @@
                 </div>
             <p class="italic tags">{{ post.tags }}</p>
             </div>
-                {% endif %}
-            {% endfor %}
-
-        </div>
+        {% endif %}
+    {% endfor %}
+</div>
 
 {%  endblock %}
