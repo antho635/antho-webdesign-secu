@@ -50,7 +50,7 @@
 }
 
 </style>
-
+    <!-- ===== container article ===== -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 card mb-4  mt-3 left  top">
@@ -64,6 +64,7 @@
                             {% endblock title %}
                         </h1>
 
+                    <!-- condition img article -->
                     {% if post.category.name == 'Développement' or post.category.name == 'Programmation' %}
                         <img class="post-img" src="https://thumbs.dreamstime.com/b/web-html-codage-site-frontend-d%C3%A9veloppement-du-langage-de-programmation-pour-le-arri%C3%A8re-plan-m%C3%A9dia-mixte-213091266.jpg"
                              alt="img"/>
@@ -81,7 +82,8 @@
                     {% endif %}
                     </div>
 
-                    <!-- auteur et date de l'article du blog -->
+<!-- ===== body du blog ===== -->
+                    <!-- auteur et date -->
                     <p class=" text-muted">
                         {{ post.author }} | {{ post.created_on }}
                     </p>
