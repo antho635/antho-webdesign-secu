@@ -16,22 +16,22 @@
 </style>
 
 <div class="flex-container">
-
+<!-- ===== SLIDE Blog ===== -->
 	<div class="flex-slide home">
 		<div class="flex-title flex-title-home">
-            <a href="{% url 'index_blog' %}">
-                Blog
-            </a>
+            <a href="{% url 'index_blog' %}">Blog</a>
         </div>
         <div class="flex-about flex-about-home">
-            <a href="{% url 'index_blog' %}"> index</a>
+            <a href="{% url 'index_blog' %}"> Toute l'actus de dév</a>
             <br>
-            <a href="{% url 'index_test' %}"> test</a>
+            <a href="{% url 'list_post_hack' %}"> Toute l'actus cyber</a>
             <br>
-            <a href="{% url 'list_post' %}"> liste</a>
+            <a href="{% url 'list_post_cryptos' %}"> Toute l'actus des cryptos</a>
+            <br>
+            <a href="{% url 'list_post_ia' %}"> Toute l'actus I.A</a>
         </div>
 	</div>
-
+<!-- ===== SLIDE Tutorielles ===== -->
 	<div class="flex-slide about">
         <div class="flex-title">Tutoriels</div>
 		<div class="flex-about">
@@ -51,16 +51,12 @@
             </ul>
         </div>
 	</div>
-
+<!-- ===== SLIDE Portfolio ===== -->
 	<div class="flex-slide work">
 		<div class="flex-title">
-            <a href="{% url 'index_portfolio' %}">Portfolio
-            </a>
+            <a href="{% url 'index_portfolio' %}">Portfolio</a>
         </div>
 		<div class="flex-about">
-            <p>
-                <a href="{% url 'index_portfolio' %}">Visitez mon portfolio</a>
-            </p>
 			<ul>
 				<li>Mon parcour</li>
 				<li>Mes projets</li>
@@ -68,11 +64,10 @@
 			</ul>
 		</div>
 	</div>
-
+<!-- ===== SLIDE Contact ===== -->
 	<div class="flex-slide contact">
         <div class="flex-title">
-            <a href="{% url 'contact' %}">Contact
-            </a>
+            <a href="{% url 'contact' %}">Contact</a>
         </div>
         <div class="flex-about">
             <p>
