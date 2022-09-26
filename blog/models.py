@@ -1,11 +1,13 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.urls import reverse
 
 
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
     date_added = models.DateTimeField(auto_now=True, null=True, auto_created=True)
     slug = models.SlugField(max_length=200, unique=True, null=True)
+
     # slug = models.SlugField(max_length=200, db_index=True)
 
     def __str__(self):
@@ -33,9 +35,13 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     tags = models.CharField(max_length=50)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, default=1)
+    thumbnail = models.ImageField(upload_to='blog/thumbnails/', default='blog/thumbnails/default.png')
 
     class Meta:
         ordering = ['-created_on']
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("list_post", kwargs={"slug": self.slug})

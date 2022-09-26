@@ -1,7 +1,7 @@
 from django.urls import path
 
 from .views import PostDetail, PostList, index_test, index_blog, \
-    DevActus, DevActusDetail, HackActus, CryptosActus, IaActus
+    DevActus, DevActusDetail, HackActus, CryptosActus, IaActus, DevActusTest
 
 urlpatterns = [
     path('blog/', index_blog, name="index_blog"),
@@ -17,8 +17,7 @@ urlpatterns = [
 
     path('blog/list/i-a/', IaActus.as_view(), name='list_post_ia'),
 
-    # path('blog/list/hacking', hack_actus, name='list_post_hack'),
-    # path('blog/list/cryptos', cryptos_actus, name='list_post_cryptos'),
-    # path('blog/list/ia', ia_actus, name='list_post_ia'),
     path('blog/post_detail/<slug:slug>/', PostDetail.as_view(), name='post_detail'),
+
+    path('blog/list/developpement/test', DevActusTest.as_view(), name='list_post_dev_test'),
 ]
