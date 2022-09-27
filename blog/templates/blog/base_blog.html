@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Portfolio</title>
     <!--==== fontawesome ====-->
     <script src="https://kit.fontawesome.com/a2a69c8064.js" crossorigin="anonymous"></script>
@@ -16,7 +19,7 @@
 
 </head>
 
-<body class="bg-dark">
+<body style="font-family: 'Cinzel', serif;" class="bg-dark">
 <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid d-flex align-items-center justify-content-between">
@@ -48,10 +51,21 @@
             <ul>
                 <!-- eco déménagement -->
               <li>
-                  <a href="{% url 'list_post_dev' %}">
-                      Développement
-                  </a>
-              </li>
+                  <li class="dropdown">
+                    <a href="#">
+                        <span>Développement</span>
+                        <i class="bi bi-chevron-down dropdown-indicator"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{% url 'list_post_dev' %}">Développement</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'list_post_dev_test' %}">Développement test</a>
+                        </li>
+                    </ul>
+                </li>
+
 
                 <!-- la cordée numérique -->
                 <li>
