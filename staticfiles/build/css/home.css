@@ -24,8 +24,10 @@ body {
   font-family: var(--font-default);
   color: var(--color-default);
   width: 100%;
-  margin: 0;
   padding: 0;
+  background-color: var(--main-bg);
+  letter-spacing: 0.5px;
+  margin: 0 !important;
 }
 
 a {
@@ -2240,12 +2242,6 @@ index test
   background-color: var(--selection-bg);
 }
 
-body {
-  background-color: var(--main-bg);
-  letter-spacing: 0.5px;
-  margin: 0 !important;
-}
-
 img {
   width: 100%;
   vertical-align: top;
@@ -2547,12 +2543,15 @@ p {
 ** END Developpement/list_post_detaiils
 **/
 /**
-** ******** Developpement/list_post_detaiils ********
+** ******** portfolio ********
 **/
 .cite {
   margin: 20px;
 }
 
+/**
+** ******** END portfolio ********
+**/
 @media (min-width: 900px) {
   .card {
     grid-template-columns: auto 70px minmax(100px, 400px);
