@@ -2336,30 +2336,6 @@ a {
   }
 }
 
-@media (min-width: 900px) {
-  .card {
-    grid-template-columns: auto 70px minmax(100px, 400px);
-    grid-template-rows: repeat(3, auto);
-  }
-  .card:nth-child(even) {
-    grid-template-columns: minmax(100px, 400px) 70px auto;
-  }
-  .card__thumb {
-    grid-area: 1 / 1 / -1 / 3;
-  }
-  .card:nth-child(even) .card__thumb {
-    grid-area: 1 / 2 / -1 / -1;
-  }
-  .card__content {
-    grid-area: 2 / 2 / -2 / -1;
-    text-align: left;
-  }
-  .card:nth-child(even) .card__content {
-    text-align: left;
-    grid-area: 2 / 1 / -2 / 3;
-  }
-}
-
 .form-item {
   margin: 75px auto;
   width: 75%;
@@ -2401,6 +2377,200 @@ a:after {
 a:hover:after {
   width: 100%;
   left: 0;
+}
+
+/**
+** ******** Developpement/list_post_dev ********
+**/
+.container-post {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(81, 132, 230, 0.25);
+  border-radius: 12px;
+  padding: 38px;
+  filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.125));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin: 50px auto;
+  border: 2px solid rgba(255, 255, 255, 0.255);
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-image {
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.255);
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  color: rgba(255, 255, 255, 0.98);
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+
+p {
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 150%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.button-wrapper {
+  margin-top: 18px;
+}
+
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.btn + .btn {
+  margin-left: 10px;
+}
+
+.outline {
+  background: transparent;
+  color: rgba(0, 212, 255, 0.9);
+  border: 1px solid rgba(0, 212, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.outline:hover {
+  transform: scale(1.125);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.fill {
+  background: rgba(0, 124, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
+  /*filter: drop-shadow();*/
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.fill:hover {
+  transform: scale(1.125);
+  border-color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+  transition: all 0.3s ease;
+}
+
+.box-card-list {
+  display: flex;
+  align-items: center;
+}
+
+.box-card-infos {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.text-card-blog-list {
+  margin: 0 auto 30px auto;
+}
+
+.banner-image {
+  /* width: 100%; */
+  width: 60%;
+  margin: auto;
+}
+
+/**
+** END Developpement/list_post_dev
+**/
+/**
+** ******** Developpement/list_post_detaiils ********
+**/
+.card-text {
+  color: black;
+  width: 100%;
+  display: flex;
+  max-width: none;
+  text-align: justify;
+  line-height: 2;
+  font-size: 1.3em;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
+  justify-content: center;
+  margin: auto;
+  min-width: 700px;
+}
+
+.col-md-8 {
+  display: flex;
+  padding: 50px;
+}
+
+.post-title {
+  color: black;
+}
+
+.flex-post-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.post-img {
+  width: 25%;
+  border-radius: 15px;
+}
+
+/**
+** END Developpement/list_post_detaiils
+**/
+/**
+** ******** Developpement/list_post_detaiils ********
+**/
+@media (min-width: 900px) {
+  .card {
+    grid-template-columns: auto 70px minmax(100px, 400px);
+    grid-template-rows: repeat(3, auto);
+  }
+  .card:nth-child(even) {
+    grid-template-columns: minmax(100px, 400px) 70px auto;
+  }
+  .card__thumb {
+    grid-area: 1 / 1 / -1 / 3;
+  }
+  .card:nth-child(even) .card__thumb {
+    grid-area: 1 / 2 / -1 / -1;
+  }
+  .card__content {
+    grid-area: 2 / 2 / -2 / -1;
+    text-align: left;
+  }
+  .card:nth-child(even) .card__content {
+    text-align: left;
+    grid-area: 2 / 1 / -2 / 3;
+  }
 }
 
 /*# sourceMappingURL=../build/css/home.css.map */
