@@ -2,15 +2,12 @@
 {% load static %}
 
 {% block content %}
-<style>
 
-
-</style>
     <div class="separateur"></div>
     <!-- ===== container article ===== -->
     <div class="container">
         <div class="row">
-            <div class="col-md-8 card mb-4  mt-3 left  top">
+            <div class="col-md-8 card mb-4  mt-3 left top">
                 <div class="card-body">
 
                     <!-- head du blog -->
@@ -23,7 +20,7 @@
                         <img class="post-img" src="{{ post.thumbnail.url }}" alt="image du post">
                     </div>
 
-<!-- ===== body du blog ===== -->
+                    <!-- ===== body du blog ===== -->
                     <!-- auteur et date -->
                     <p class=" text-muted">
                         {{ post.author }} | {{ post.created_on }}
