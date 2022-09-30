@@ -5,10 +5,6 @@ from .forms import ContactForm
 from .models import Contact
 
 
-def success_view(request):
-    return HttpResponse("Success! Thank you for your message.")
-
-
 # Index
 def index(request):
     return render(request, 'portfolio/index.html')
