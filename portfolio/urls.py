@@ -7,6 +7,7 @@ urlpatterns = [
     path('projet/pizzeria/', pizzeria, name="pizzeria"),
     path('portfolio/', index, name='index_portfolio'),
     path('portfolio/project/list/', ProjectListView.as_view(), name='project_list'),
+    # path('portfolio/project/list/<slug:slug>/', ProjectListViewDetails.as_view(), name='project_details'),
     # path("contact/", contactView, name="contact"),
     # path("contact/", contact_form, name="contact_form"),
 ]
