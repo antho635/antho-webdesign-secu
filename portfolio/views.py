@@ -13,3 +13,7 @@ def index(request):
 # Eco
 def eco_demenagement(request):
     return render(request, 'portfolio/projets/eco-demenagement.html')
+
+
+def pizzeria(request):
+    return render(request, 'portfolio/projets/pizzeria.html')
