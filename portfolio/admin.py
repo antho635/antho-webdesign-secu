@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, ContactAdmin
+from .models import Language
 
 # Register your models here.
-# admin.site.register(Contact, ContactAdmin)
+admin.site.register(Language)
