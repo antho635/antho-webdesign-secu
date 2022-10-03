@@ -2,111 +2,46 @@
 {% load static %}
 
 {% block content %}
-    <style>
-
-        .box-blog {
-          flex-wrap: wrap;
-          display: flex;
-          width: 100%;
-          margin: 100px auto;
-          padding: 0;
-          flex-direction: row;
-          justify-content: space-around;
-        }
-
-        div.p-md-5 {
-          width: 40%;
-            border: solid 1px ;
-        }
-
-        div.p-md-5 > div {
-          width: 100%;
-        }
-
-        h1.text-center {
-          margin-top: 80px;
-        }
-
-        @media (min-width: 768px) {
-          .p-md-5 {
-            padding: 1rem !important;
-          }
-        }
-
-
-/* Élément | http://127.0.0.1:8000/blog/list/developpement/ */
-
-.category {
-  color: #37a5d0;
-  font-size: 1.1em;
-  font-weight: bold;
-}
-
-/* Élément | http://127.0.0.1:8000/blog/list/developpement/ */
-
-.tags {
-    font-style: italic;
-    color: green;
-    font-weight: bolder;
-    font-size: 1.1em;
-    float: right;
-}
-
-.titre-post {
-    text-align: center;
-    background: grey;
-    width: 100%;
-    margin: auto 0;
-}
-
-.article-content {
-    line-height: 2;
-    font-size: 1.3em;
-}
-
-@media (min-width: 768px) {
-    .p-md-5 {
-         padding: 50px !important;
-    }
-}
-</style>
-
-<h1 class="text-center">L'actus de l'intelligence artificielle</h1>
-
 <!--===== separateur =====-->
+<div class="separateur"></div>
+    <h1 class="text-center">L'actus des devs</h1>
 <div class="separateur"></div>
 
 <div class="container box-blog" style="flex-direction:row;">
 
     {% for post in post_list %}
         {% if post.category.name == 'Intelligence-artificielle' %}
-    <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+            <div class="container-post">
+                <div class="wrapper">
+                    <div class="box-card-list">
+                        <img class="banner-image" src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
+                        <div class="box-card-infos">
+                            <h1 class="text-card-blog-list">{{ post.title }}</h1>
 
-    <p class="category">
-        <strong>{{ post.category }}</strong>
-    </p>
-        <div class="col-md-6 px-0">
-            <h1 class="titre-post display-4 fst-italic">{{ post.title }}</h1>
-            <div class="separateur"></div>
-            <p>
-                Auteur:
-                <strong>{{ post.author }}</strong>
-            <br>
-                publié  le:
-                <strong style="font-style: italic">
-                    {{ post.created_on}}
-                </strong>
-            </p>
-            <p class="article-content lead my-3">{{ post.content|slice:":400" }}...</p>
-            <p class="lead mb-0">
-                 <a href="{% url 'post_detail_dev' post.slug  %}" class="text-white fw-bold">Continué à lire &rarr;</a>
-            </p>
-        </div>
-    <p class="italic tags">{{ post.tags }}</p>
-    </div>
+                            <p class="text-card-blog-list">Auteur : {{ post.author }}</p>
+                            <br>
+                            <br>
+                            <p style="margin: auto">Publié le :
+                            <br>
+                            {{ post.created_on|date:"d/m/Y" }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-wrapper">
+                    <button class="btn outline">
+                        <a href="{% url 'post_detail_dev' post.slug  %}">
+                            DETAILS
+                        </a>
+                    </button>
+                        <p class="btn fill btn-warning">
+                            <strong class="tags">{{ post.tags }}</strong>
+                        </p>
+                </div>
+            </div>
         {% endif %}
     {% endfor %}
-
 </div>
 
 {%  endblock %}
