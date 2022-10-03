@@ -53,6 +53,7 @@ class ProjectList(models.Model):
     language_tags = models.CharField(max_length=50)
     project_thumbnail = models.ImageField(upload_to='images/portfolio/project/',
                                           default='images/portfolio/project/indispo.png')
+    project_link = models.URLField(max_length=200, blank=True, null=True)
 
     class Meta:
         ordering = ['-project_date_created_on']
