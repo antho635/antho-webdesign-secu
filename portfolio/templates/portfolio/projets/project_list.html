@@ -1,0 +1,28 @@
+{% extends 'portfolio/base_pr.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Portfolio</h1>
+                <p>Here are some of my projects</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for projet in project_list %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="project">
+                            <h2>{{ project_list.project_title }}</h2>
+                            <p>{{ projet.project_description }}</p>
+                            <p>{{ project.project_date_created_on }}</p>
+                            <p>{{ project.project_thumbnail }}</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
