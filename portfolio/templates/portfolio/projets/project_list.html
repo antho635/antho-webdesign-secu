@@ -2,28 +2,13 @@
 {% load static %}
 
 {% block content %}
-    <div class="container">
+    <!-- Boucle sur les projets -->
+    {% for project in projects %}
         <div class="row">
             <div class="col-md-12">
-                <h1>Portfolio</h1>
-                <p>Here are some of my projects</p>
+                <h1>{{ project.project_title }}</h1>
+                <p>{{ project.project_description }}</p>
             </div>
         </div>
-        <div class="row">
-
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="project">
-                            {% for projet in project_list_view %}
-                            <h2>{{ project_list.project_title }}</h2>
-                            <p>{{ projet.project_description }}</p>
-                            <p>{{ project.project_date_created_on }}</p>
-                            <p>{{ project.project_thumbnail }}</p>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </div>
-
+    {% endfor %}
 {% endblock %}

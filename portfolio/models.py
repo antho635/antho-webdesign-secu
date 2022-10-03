@@ -57,6 +57,8 @@ class ProjectList(models.Model):
 
     class Meta:
         ordering = ['-project_date_created_on']
+        verbose_name = 'project'
+        verbose_name_plural = 'projects'
 
     def __str__(self):
         return self.project_title
