@@ -3,12 +3,90 @@
 
 {% block content %}
     <!-- Boucle sur les projets -->
-    {% for project in projects %}
-        <div class="row">
-            <div class="col-md-12">
-                <h1>{{ project.project_title }}</h1>
-                <p>{{ project.project_description }}</p>
-            </div>
+<style>
+.box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+ text-align: center;
+ margin: 80px auto;
+}
+
+</style>
+    <div class="title">
+        <h1>Liste de mes projets</h1>
+    </div>
+        <div class="box">
+            <div class="card">
+                <img class="animate" src="{% static 'images/portfolio/eco.png' %}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
+                <div class="card__content">
+
+                    <h2 class="card__title animate text-dark">
+                        <a href="javascript:" class="text-dark">€co-Déménagement</a>
+                    </h2>
+                    <p class="text-dark">
+                        " Entrepreneur serieux avec 15 ans d experience dans le transport de marchandises et une équipe motivée et passionnée,
+                        Éco déménagement est le n°1 du transport de biens dans la région PACA avec divers véhicules selon vos besoins. "
+                    </p>
+                </div>
+                    <button class="card__btn">
+                        <a href="#">
+                            <i class="fa fa-arrow-right fa-fw"></i>
+                        </a>
+                    </button>
+                </div>
+
+            <div class="card">
+                <img class="animate" src="{% static 'images/portfolio/project/logo_Grand_Chambery.png' %}" alt="img"/>
+                <div class="card__content">
+
+                    <h2 class="card__title animate text-dark">
+                        <a href="javascript:" class="text-dark">Grand Chambéry</a>
+                    </h2>
+                    <p class="text-dark">
+                        " Construisons ensemble un internet à votre écoute, durable et accessible. "
+                    </p>
+                </div>
+                    <button class="card__btn">
+                        <a href="#">
+                            <i class="fa fa-arrow-right fa-fw"></i>
+                        </a>
+                    </button>
+                </div>
+
+            <div class="card">
+                <img class="animate" src="{% static 'images/portfolio/project/Logo-Noux.png' %}" alt="img"/>
+                <div class="card__content">
+
+                    <h2 class="card__title animate text-dark">
+                        <a href="javascript:" class="text-dark">NouxCréations</a>
+                    </h2>
+                    <p class="text-dark">
+                        " All Customisation Design graphique. Fresques Interventions Toiles. Image. "
+                    </p>
+                </div>
+                    <button class="card__btn">
+                        <a href="#">
+                            <i class="fa fa-arrow-right fa-fw"></i>
+                        </a>
+                    </button>
+                </div>
         </div>
-    {% endfor %}
 {% endblock %}

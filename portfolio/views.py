@@ -24,3 +24,7 @@ def pizzeria(request):
 class ProjectListView(generic.ListView):
     queryset = ProjectList.objects.order_by('-project_date_created_on')
     template_name = 'portfolio/projets/project_list.html'
+
+
+def project_list(request):
+    return render(request, 'portfolio/projets/project_list.html')
