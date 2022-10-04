@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import generic
 
+from portfolio.models import Project
+
 
 # Index
 def index(request):
@@ -17,7 +19,8 @@ def pizzeria(request):
 
 
 def project_list(request):
-    return render(request, 'portfolio/projets/project_list.html')
+    project = Project.objects.all()
+    return render(request, 'portfolio/projets/project_list.html', {'project': project})
 
 # affichr les projets
 # class ProjectListView(generic.ListView):
