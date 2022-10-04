@@ -18,9 +18,9 @@ def pizzeria(request):
     return render(request, 'portfolio/projets/pizzeria.html')
 
 
-def project_list(request):
-    project = Project.objects.all()
-    return render(request, 'portfolio/projets/project_list.html', {'project': project})
+class project_list(generic.ListView):
+    queryset = Project.objects.all()
+    template_name = 'portfolio/projets/project_list.html'
 
 # affichr les projets
 # class ProjectListView(generic.ListView):
