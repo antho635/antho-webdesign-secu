@@ -37,6 +37,26 @@ class Language(models.Model):
     class Meta:
         ordering = ['language_name']
 
+    def get_absolute_url(self):
+        return reverse("language_detail", kwargs={"pk": self.pk})
+
+
+class Category(models.Model):
+    category_name = models.CharField(max_length=120, blank=True, null=True)
+    slug_category = models.SlugField(max_length=120, blank=True, null=True)
+
+    def __str__(self):
+        return self.category_name
+
+    class Meta:
+        ordering = ['category_name']
+
+
+class LanguageAdmin(admin.ModelAdmin):
+    list_display = ['language_name']
+    list_filter = ['language_name']
+    ordering = ['language_name']
+
 
 PROJECT_STATUS = [
     (0, "En cours"),
@@ -48,6 +68,7 @@ class ProjectList(models.Model):
     project_title = models.CharField(max_length=200, unique=True)
     project_slug = models.SlugField(max_length=200, unique=True)
     project_description = models.TextField()
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
     project_date_created_on = models.DateTimeField(auto_now_add=True)
     project_status = models.IntegerField(choices=PROJECT_STATUS, default=0)
     language_tags = models.CharField(max_length=50)

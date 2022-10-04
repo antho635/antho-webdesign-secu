@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Language, ProjectList
+from .models import Language, ProjectList, LanguageAdmin, Category
 
 
 class ProjectListAdmin(admin.ModelAdmin):
@@ -9,5 +9,6 @@ class ProjectListAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(Language)
+admin.site.register(Language, LanguageAdmin)
 admin.site.register(ProjectList, ProjectListAdmin)
+admin.site.register(Category)
