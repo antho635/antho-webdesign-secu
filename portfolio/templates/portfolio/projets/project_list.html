@@ -33,6 +33,9 @@
     <div class="title">
         <h1>Liste de mes projets</h1>
     </div>
+    {% for project in projects %}
+    <h1>{{ project.project_name }}</h1>
+    {% endfor %}
         <div class="box">
             <div class="card">
 
