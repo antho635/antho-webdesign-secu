@@ -33,28 +33,8 @@
     <div class="title">
         <h1>Liste de mes projets</h1>
     </div>
-    {% for project in project_list %}
-        <div class="card">
 
-                <img class="animate" src="{{ project.project_image }}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
-                <div class="card__content">
-
-                    <h2 class="card__title animate text-dark">
-                        <a href="javascript:" class="text-dark">{{ project.project_name }}</a>
-                    </h2>
-                    <p class="text-dark">
-                        {{ project.project_description }}
-                    </p>
-                </div>
-                    <button class="card__btn">
-                        <a href="{{ project.project_link }}"><!-- TODO : Lien vers la page liste site vitrine -->
-                            <i class="fa fa-arrow-right fa-fw"></i>
-                        </a>
-                    </button>
-                </div>
-    {% endfor %}
-
-
+    
         <div class="box">
             <div class="card">
 
