@@ -23,10 +23,11 @@ def pizzeria(request):
 
 
 class project_list(generic.ListView):
+    # queryset = Project.objects.filter(project_category__category_name='site vitrine')
     queryset = Project.objects.all()
     template_name = 'portfolio/projets/project_list.html'
 
-# affichr les projets
+# afficher les projets
 # class ProjectListView(generic.ListView):
 #     queryset = Project.objects.filter(status=1).order_by('-created_on')
 #     template_name = 'portfolio/projets/project_list.html'
