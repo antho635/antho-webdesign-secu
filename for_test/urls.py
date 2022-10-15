@@ -7,5 +7,5 @@ urlpatterns = [
     path('test/projet-web/', ProjectWeb.as_view(), name="projet_web"),
     path('test/list-projet-web/<str:slug>/', details_projet, name="details_projet"),  # list of projects web
     path('test/details/<str:slug>/', ProjectWebDetail.as_view(), name='project_web_detail'),
-    path('test/project/<str:slug>/', details, name='details'),
+    path('test/project/<str:slug>/details', details, name='details'),
 ]
