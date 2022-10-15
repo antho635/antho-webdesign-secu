@@ -23,11 +23,8 @@
 }
 
 .bg-card {
-    background: #dfe3d9;
+    background: #e6e2e2;
 }
-
-
-/* home.css | http://127.0.0.1:8000/static/build/css/home.css */
 
 .flex-post-head {
   /* justify-content: space-between; */
@@ -43,14 +40,13 @@
 }
 
 </style>
+
     <div class="separateur"></div>
 
     <!-- ===== container article ===== -->
     <div class="container">
 
         {% for project in project_list %}
-            {% if project.category_name == 'web' %}
-
                 <div class="row">
                     <div class="col-md-8 card mb-4 bg-card mt-3 left top">
 
@@ -87,9 +83,10 @@
                     </div>
                 </div>
             <div class="separateur"></div>
-            {% endif %}
     {% endfor %}
-        <a href="{% url 'list_categories' %}" class="btn btn-danger boutons">Retour</a>
+        <a href="{% url 'projet_web' %}" class="btn btn-warning boutons">
+            Retour liste {{ project.category_name }}
+        </a>
     </div>
  <div class="separateur"></div>
 {%  endblock %}

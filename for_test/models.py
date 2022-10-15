@@ -3,7 +3,7 @@ from django.urls import reverse
 
 # Create your models here.
 CATEGORY_CHOICES = (
-    ('site web', 'Site Web'),
+    ('site_web', 'Site Web'),
     ('appli_mobile', 'Appli Mobile'),
     ('appli_desktop', 'Appli Desktop'),
     ('other', 'Other'),
@@ -25,9 +25,8 @@ class Project(models.Model):
     language_tags = models.CharField(max_length=50)
     project_thumbnail = models.ImageField(upload_to='images/portfolio/project/',
                                           default='images/portfolio/project/default.png')
-    # category = models.IntegerField(choices=CATEGORY_CHOICES, default=0)
     project_url = models.URLField(max_length=200, default='#')
-    category_name = models.CharField(choices=CATEGORY_CHOICES, default='site web', max_length=20)
+    category_name = models.CharField(choices=CATEGORY_CHOICES, default='site_web', max_length=20)
 
     def __str__(self):
         return self.title
