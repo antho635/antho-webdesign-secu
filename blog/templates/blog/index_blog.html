@@ -131,6 +131,11 @@ a {
     grid-area: 2/1/-2/3;
   }
 }
+
+.card > div > p {
+  font-size: 0.9em;
+}
+
 </style>
     <div class="box">
         <div class="card">
@@ -147,7 +152,8 @@ a {
                 <p class="card__text">
                     <cite>"Codez comme si la personne qui finit par maintenir votre code est un psychopathe violent qui sait où vous vivez."</cite>
                     <br>
-                    - Jeff Atwood
+                    <br>
+                    <strong>- Jeff Atwood</strong>
                 </p>
                 <button class="card__btn">
                     <a href="{% url 'list_post_dev' %}">
@@ -170,7 +176,9 @@ a {
                 <p class="card__text">
                     <cite>"Ceux qui peuvent renoncer à une liberté essentielle pour obtenir un peu de sécurité temporaire ne méritent ni la liberté ni la sécurité.”</cite>
                     <br>
-                    ― Benjamin Franklin</p>
+                    <br>
+                    <strong>- Benjamin Franklin</strong>
+                </p>
                 <button class="card__btn">
                     <a href="{% url 'list_post_hack' %}">
                         <i class="fa fa-arrow-right fa-fw"></i>
@@ -193,7 +201,8 @@ a {
                 <p class="card__text">
                     <cite>" Le bitcoin fera aux banques ce que les e-mails ont fait au secteur postal "</cite>
                     <br>
-                    - Rick Falkvinge
+                    <br>
+                    <strong> - Rick Falkvinge</strong>
                 </p>
                 <button class="card__btn">
                     <a href="{% url 'list_post_cryptos' %}">
@@ -216,7 +225,8 @@ a {
                 <p class="card__text">
                     <cite>"l'intelligence artificielle ne fait pas le poids face à la stupidité naturelle."</cite>
                     <br>
-                    - Albert Einstein
+                    <br>
+                    <strong> - Albert Einstein</strong>
                 </p>
                 <button class="card__btn">
                     <a href="{% url 'list_post_ia' %}">

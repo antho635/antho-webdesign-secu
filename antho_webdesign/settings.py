@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django_sass_compiler',
     'blog',
     'contact',
+    'for_test',
 ]
 
 MIDDLEWARE = [
