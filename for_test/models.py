@@ -3,16 +3,16 @@ from django.urls import reverse
 
 # Create your models here.
 CATEGORY_CHOICES = (
-    ('web', 'Web'),
-    ('mobile', 'Mobile'),
-    ('desktop', 'Desktop'),
+    ('site web', 'Site Web'),
+    ('appli_mobile', 'Appli Mobile'),
+    ('appli_desktop', 'Appli Desktop'),
     ('other', 'Other'),
 )
 
 PROJECT_STATUS = (
-    (0, 'en_cours'),
-    (1, 'En ligne'),
-    (2, 'Suspendu'),
+    ('en_cours', 'En Cours'),
+    ('en_ligne', 'En ligne'),
+    ('canceled', 'Suspendu'),
 )
 
 
@@ -21,13 +21,13 @@ class Project(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     description = models.TextField()
     date_created_on = models.DateTimeField(auto_now_add=True)
-    project_status = models.IntegerField(choices=PROJECT_STATUS, default=0)
+    project_status = models.CharField(choices=PROJECT_STATUS, default='en_cours', max_length=10)
     language_tags = models.CharField(max_length=50)
     project_thumbnail = models.ImageField(upload_to='images/portfolio/project/',
                                           default='images/portfolio/project/default.png')
     # category = models.IntegerField(choices=CATEGORY_CHOICES, default=0)
     project_url = models.URLField(max_length=200, default='#')
-    category_name = models.CharField(choices=CATEGORY_CHOICES, default='Web', max_length=20)
+    category_name = models.CharField(choices=CATEGORY_CHOICES, default='site web', max_length=20)
 
     def __str__(self):
         return self.title

@@ -2,52 +2,94 @@
 {% load static %}
 
 {% block content %}
+<style>
+.box {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 30px auto;
+}
 
+.boutons {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.post-img {
+  width: 35%;
+}
+
+.bg-card {
+    background: #dfe3d9;
+}
+
+
+/* home.css | http://127.0.0.1:8000/static/build/css/home.css */
+
+.flex-post-head {
+  /* justify-content: space-between; */
+  /* margin-bottom: 20px; */
+  justify-content: space-around;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.col-md-8 {
+  /* padding: 50px; */
+  padding: 10px;
+}
+
+</style>
     <div class="separateur"></div>
 
     <!-- ===== container article ===== -->
     <div class="container">
 
-    {% for project in project_list %}
-        {% if project.category_name == 'web' %}
+        {% for project in project_list %}
+            {% if project.category_name == 'web' %}
 
-        <div class="row">
-            <div class="col-md-8 card mb-4  mt-3 left top">
+                <div class="row">
+                    <div class="col-md-8 card mb-4 bg-card mt-3 left top">
 
-                <div class="card-body">
+                        <div class="card-body">
+                            <!-- head du blog -->
+                            <div class="flex-post-head">
 
-                    <!-- head du blog -->
-                    <div class="flex-post-head">
+                                <h1 class="post-title">
+                                    {% block title %}
+                                        {{ project.title }}
+                                    {% endblock title %}
+                                </h1>
+                                <img class="post-img" src="{{ project.project_thumbnail.url }}" alt="image du post">
+                            </div>
+                                <p class="text text-dark">Status: {{ project.project_status }}</p>
 
-                        <h1 class="post-title">
-                            {% block title %}
-                                {{ project.title }}
-                            {% endblock title %}
-                        </h1>
-                        <img class="post-img" src="{{ project.project_thumbnail.url }}" alt="image du post">
+                            <!-- ===== body du blog ===== -->
+                            <!-- auteur et date -->
+                            <p class="text-muted">
+                                {{ project.date_created_on }} | {{ project.category_name }}
+                            </p>
+
+                            <!-- contenu de l'article du blog -->
+
+                            <!-- lien vers details du projet -->
+                            <div class="box">
+                                <a href="{% url 'details' project.slug %}" class="btn btn-success boutons">Détails du projet</a>
+
+                                <a href="{{ project.project_url }}" class="btn btn-warning boutons">Lien du projet</a>
+
+                            </div>
+                        </div>
 
                     </div>
-
-                    <!-- ===== body du blog ===== -->
-                    <!-- auteur et date -->
-                    <p class=" text-muted">
-                        {{ project.category_name }} | {{ project.date_created_on }}
-                    </p>
-
-                    <!-- contenu de l'article du blog -->
-
-                <!-- lien vers details du projet -->
-
-                    <a href="{% url 'details' project.slug %}" class="btn btn-primary">Voir le projet</a>
-
-                    <a class="btn btn-warning" href="{% url 'list_categories' %}">Retour</a>
-
                 </div>
-
-            </div>
-        </div>
+            <div class="separateur"></div>
             {% endif %}
     {% endfor %}
+        <a href="{% url 'list_categories' %}" class="btn btn-danger boutons">Retour</a>
     </div>
-
+ <div class="separateur"></div>
 {%  endblock %}

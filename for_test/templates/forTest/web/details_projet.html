@@ -16,6 +16,20 @@ a.btn:nth-child(3) {
  float: right;
  margin: auto 200px;
 }
+
+.box {
+ display: flex;
+ justify-content: space-around;
+ margin: 150px auto;
+}
+
+/* Élément | http://127.0.0.1:8000/test/project/pizza/details */
+
+.btn {
+  width: 25%;
+}
+
+
 </style>
 
   <main id="main" data-aos="fade" data-aos-delay="1500">
@@ -103,11 +117,15 @@ a.btn:nth-child(3) {
       </div>
     </section><!-- End About Section -->
       <!-- btn retour -->
+      <div class="box">
+          <a href="{% url 'projet_web' %}" class="btn btn-warning boutons">
+              Retour liste {{ project.category_name }}
+          </a>
 
-      <a href="{% url 'projet_web' %}" class="btn btn-warning">
-          Retour
-      </a>
-
+          <a href="{% url 'list_categories' %}" class="btn btn-danger boutons">
+              liste des categories
+          </a>
+      </div>
   </main><!-- End #main -->
 
 {% endblock %}
