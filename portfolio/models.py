@@ -17,6 +17,21 @@ class Contact(models.Model):
     class Meta:
         ordering = ['-date_send']
 
+# Create your models here.
+CATEGORY_CHOICES = (
+    ('site_web', 'Site Web'),
+    ('appli_mobile', 'Appli Mobile'),
+    ('appli_desktop', 'Appli Desktop'),
+    ('other', 'Other'),
+)
+
+PROJECT_STATUS = (
+    ('en_cours', 'En Cours'),
+    ('en_ligne', 'En ligne'),
+    ('canceled', 'Suspendu'),
+)
+
+
 
 class ContactAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'date_send']

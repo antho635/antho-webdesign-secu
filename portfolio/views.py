@@ -23,35 +23,20 @@ def pizzeria(request):
 
 
 # fonction affiche les details du projet
-class CategoryList(generic.ListView):
+class ListCategory(generic.ListView):
     model = Project
     queryset = Project.objects.all()
     template_name = 'portfolio/projets/category/list_category.html'
 
 
-class ProjectCategoryListe(generic.DetailView):
+class ProjectSiteVitrine(generic.ListView):
     model = Project
     queryset = Project.objects.all()
-    template_name = 'forTest/web/details_projet.html'
+    template_name = 'portfolio/projets/category/list_site_vitrine.html'
 
 
-class project_list(generic.ListView):
-    # queryset = Project.objects.filter(project_category__category_name='site vitrine')
+class ProjectDetail(generic.DetailView):
+    model = Project
     queryset = Project.objects.all()
-    template_name = 'portfolio/projets/project_list.html'
+    template_name = 'portfolio/projets/category/details_projet.html'
 
-# afficher les projets
-# class ProjectListView(generic.ListView):
-#     queryset = Project.objects.filter(status=1).order_by('-created_on')
-#     template_name = 'portfolio/projets/project_list.html'
-
-# afficher les details d'un projet
-# class ProjectListViewDetails(generic.DetailView):
-#     model = Project
-#     template_name = 'portfolio/projets/project_details.html'
-
-# def project_list(request):
-#     return render(request, 'portfolio/projets/project_list.html')
-
-# def project_details(request):
-#     return render(request, 'portfolio/projets/project_details.html')
