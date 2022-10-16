@@ -40,7 +40,7 @@
 }
 
 </style>
-
+<h1 class="text-center">ICI liste des sites vitrines</h1>
     <div class="separateur"></div>
 
     <!-- ===== container article ===== -->
@@ -55,27 +55,25 @@
                             <div class="flex-post-head">
 
                                 <h1 class="post-title">
-                                    {% block title %}
-                                        {{ project.title }}
-                                    {% endblock title %}
+                                        {{ project.project_name }}
                                 </h1>
-                                <img class="post-img" src="{{ project.project_thumbnail.url }}" alt="image du post">
+                                <img class="post-img" src="{{ project.project_image.url }}" alt="image du post">
                             </div>
                                 <p class="text text-dark">Status: {{ project.project_status }}</p>
 
                             <!-- ===== body du blog ===== -->
                             <!-- auteur et date -->
                             <p class="text-muted">
-                                {{ project.date_created_on }} | {{ project.category_name }}
+                                {{ project.date }} | {{ project.project_category }}
                             </p>
 
                             <!-- contenu de l'article du blog -->
 
                             <!-- lien vers details du projet -->
                             <div class="box">
-                                <a href="{% url 'details' project.slug %}" class="btn btn-success boutons">Détails du projet</a>
+                                <a href="{% url 'details_pr' project.slug %}" class="btn btn-success boutons">Détails du projet</a>
 
-                                <a href="{{ project.project_url }}" class="btn btn-warning boutons">Lien du projet</a>
+                                <a href="{{ project.project_link }}" class="btn btn-warning boutons">Lien du projet</a>
 
                             </div>
                         </div>
@@ -84,8 +82,9 @@
                 </div>
             <div class="separateur"></div>
     {% endfor %}
-        <a href="{% url 'projet_site_vitrine' %}" class="btn btn-warning boutons">
-            Retour liste {{ project.category_name }}
+
+        <a href="{% url 'liste_projet_web' %}" class="btn btn-warning boutons">
+            Retour liste
         </a>
     </div>
  <div class="separateur"></div>
