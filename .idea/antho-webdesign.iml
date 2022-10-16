@@ -16,8 +16,9 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/env" />
       <excludeFolder url="file://$MODULE_DIR$/static" />
+      <excludeFolder url="file://$MODULE_DIR$/portfoliovenv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (anthonydidio)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (antho-webdesign-secu) (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">
