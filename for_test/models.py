@@ -49,3 +49,17 @@ class DetailsProject(models.Model):
     class Meta:
         verbose_name_plural = 'DetailsProjects'
         verbose_name = 'DetailsProject'
+
+
+class Category(models.Model):
+    category_name = models.CharField(max_length=120, blank=True, null=True)
+    slug_category = models.SlugField(max_length=120, blank=True, null=True)
+
+    def __str__(self):
+        return self.category_name
+
+    class Meta:
+        ordering = ['category_name']
+
+    def get_absolute_url(self):
+        return reverse('category_test_web', args=[self.slug_category])

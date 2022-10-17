@@ -28,10 +28,6 @@ def details_projet(request, slug):
     return render(request, 'forTest/web/details_projet.html', {'details_project': details_project})
 
 
-def details_test_web(request):
-    return render(request, 'forTest/web/list_category_web.html')
-
-
 def details(request, slug):
     project = get_object_or_404(Project, slug=slug)
     return render(request, 'forTest/web/details_projet.html', {'project': project})
