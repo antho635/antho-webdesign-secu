@@ -26,7 +26,7 @@ class Project(models.Model):
     project_thumbnail = models.ImageField(upload_to='images/portfolio/project/',
                                           default='images/portfolio/project/default.png')
     project_url = models.URLField(max_length=200, default='#')
-    category_name = models.CharField(choices=CATEGORY_CHOICES, default='site_web', max_length=20)
+    category_name = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -60,6 +60,8 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['category_name']
+        verbose_name_plural = 'Categories'
+        verbose_name = 'Categorie'
 
     def get_absolute_url(self):
         return reverse('category_test_web', args=[self.slug_category])
