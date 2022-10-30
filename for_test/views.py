@@ -1,7 +1,8 @@
+from django.contrib.sites import requests
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 
-from for_test.models import Project
+from for_test.models import Project, Category
 
 
 # fonction affiche les details du projet
@@ -13,7 +14,15 @@ class CategoryList(generic.ListView):
 
 class ProjectWeb(generic.ListView):
     model = Project
-    queryset = Project.objects.all()
+    if Category.slug == 'sites-vitrines':
+        queryset = Project.objects.filter(category='site_web')
+    elif Category.slug == 'applications-mobiles':
+        queryset = Project.objects.filter(category='appli_mobile')
+    elif Category.slug == 'applications-web':
+        queryset = Project.objects.filter(category='applications_web')
+    else:
+        message = "Aucun projet n'est disponible pour le moment"
+
     template_name = 'forTest/web/list_category_web.html'
 
 

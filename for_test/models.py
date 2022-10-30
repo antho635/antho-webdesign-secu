@@ -3,6 +3,7 @@ from django.urls import reverse
 
 
 class Category(models.Model):
+    project_category = models.CharField(max_length=120, blank=True, null=True)
     category_name = models.CharField(max_length=120, blank=True, null=True)
     slug = models.SlugField(max_length=120, blank=True, null=True)
     image_cat = models.ImageField(upload_to='images/portfolio/category',
@@ -46,7 +47,7 @@ class Project(models.Model):
     project_thumbnail = models.ImageField(upload_to='images/portfolio/project/',
                                           default='images/portfolio/project/default.jpg')
     project_url = models.URLField(max_length=200, default='#')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category',
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='projects',
                                  blank=True, null=True)
 
     def __str__(self):
@@ -55,18 +56,7 @@ class Project(models.Model):
     class Meta:
         verbose_name_plural = 'Projects'
         verbose_name = 'Project'
+        ordering = ['-date_created_on']
 
     def get_absolute_url(self):
         return reverse('project_web_detail', args=[self.slug])
-
-
-class DetailsProject(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    details_project = models.TextField()
-
-    def __str__(self):
-        return self.project.title
-
-    class Meta:
-        verbose_name_plural = 'DetailsProjects'
-        verbose_name = 'DetailsProject'

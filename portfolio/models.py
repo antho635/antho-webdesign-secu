@@ -1,7 +1,5 @@
-from django.db import models
 from django.contrib.auth.models import User
-from django.contrib import admin
-from django.urls import reverse
+from django.db import models
 
 
 class Contact(models.Model):
