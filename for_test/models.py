@@ -10,6 +10,9 @@ class Category(models.Model):
                                   default='images/portfolio/category/default.jpg')
     description_cat = models.TextField(max_length=2500, blank=True, null=True)
 
+    def get_project_liste(self):
+        return Project.objects.filter(category=self)
+
     def __str__(self):
         return self.category_name
 
@@ -19,7 +22,8 @@ class Category(models.Model):
         verbose_name = 'Categorie'
 
     def get_absolute_url(self):
-        return reverse('list_categories', args=[self.slug])
+        return reverse(Category, kwargs={"slug": self.slug})
+
 
 
 # Create your models here.

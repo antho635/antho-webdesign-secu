@@ -71,13 +71,12 @@
 
                         <!-- lien vers details du projet -->
                         <div class="box">
-                            <a href="{% url 'details' project.slug %}" class="btn btn-success boutons">Détails du projet</a>
+                            <a class="btn btn-success boutons" href="{{ project.get_absolute_url }}">Détails du projet</a>
 
                             <a href="{{ project.project_url }}" class="btn btn-warning boutons">Lien du projet</a>
 
                         </div>
                     </div>
-
                 </div>
             </div>
 

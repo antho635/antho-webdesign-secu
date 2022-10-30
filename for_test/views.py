@@ -14,15 +14,7 @@ class CategoryList(generic.ListView):
 
 class ProjectWeb(generic.ListView):
     model = Project
-    if Category.slug == 'sites-vitrines':
-        queryset = Project.objects.filter(category='site_web')
-    elif Category.slug == 'applications-mobiles':
-        queryset = Project.objects.filter(category='appli_mobile')
-    elif Category.slug == 'applications-web':
-        queryset = Project.objects.filter(category='applications_web')
-    else:
-        message = "Aucun projet n'est disponible pour le moment"
-
+    queryset = Project.objects.all()
     template_name = 'forTest/web/list_category_web.html'
 
 

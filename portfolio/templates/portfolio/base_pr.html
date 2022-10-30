@@ -41,10 +41,10 @@
           </a>
             <ul>
                 <!-- eco déménagement -->
-                {% for projects in project_list %}
+                {% for category in categories %}
                 <li>
                     <a href="#">
-                        {{ projects.category.category_name }}
+                        {{ category.category_name }}
                     </a>
                 </li>
                 {% endfor %}

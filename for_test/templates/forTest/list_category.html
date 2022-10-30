@@ -28,29 +28,20 @@
     </div>
 
     <div class="box">
-        {% for projects in project_list %}
+        {% for category in project_list %}
                 <div class="card">
 
-                {% if projects.category.slug == 'sites-vitrines' %}
-                    <img class="animate" src="{% static 'images/skills/js.jpg' %}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
-                {% elif projects.category.slug == 'applications-web' %}
-                    <img class="animate" src="{% static 'images/skills/php.png' %}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
-                {% elif projects.category.slug == 'applications-mobiles' %}
-                    <img class="animate" src="{% static 'images/skills/android.png' %}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
-                    {% else %}
-                    <img class="animate" src="" alt="No img" style="height: 100%; margin: 0; padding: 0;"/>
-                {% endif %}
-
                     <div class="card__content">
-                        <h2 class="card__title animate text-dark">
-                            <a href="javascript:" class="text-dark">{{ projects.category.category_name }}</a>
+                        <h2 class="card__title animate text-dark text-bold">
+                            <a href="javascript:" class="text-dark">{{ category.category.category_name }}</a>
                         </h2>
-                        <p class="text-dark"> {{ projects.category.description_cat }}</p>
+                        <p class="text-dark"> {{ category.category.description_cat }}</p>
                     </div>
                     <button class="card__btn">
                         <a href="{% url 'projet_web' %}"><!-- TODO : Lien vers la page liste site vitrine -->
                             <i class="fa fa-arrow-right fa-fw"></i>
                         </a>
+
                     </button>
                 </div>
         {% endfor %}
