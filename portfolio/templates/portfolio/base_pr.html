@@ -35,27 +35,33 @@
           <li class="dropdown">
               <a href="{% url 'list_categories' %}">
                   <span>
-                      Projets
+                      Category Projets
                   </span>
               <i class="bi bi-chevron-down dropdown-indicator"></i>
           </a>
             <ul>
                 <!-- eco déménagement -->
                 <li>
-                    <a href="{% url 'eco-demenagement' %}">
-                        €co-Déménagement
+                    <a href="{% url 'projet_web' %}">
+                        Sites vitrines
                     </a>
                 </li>
                 <!-- la cordée numérique -->
                 <li>
                     <a href="#">
-                      La cordée numérique
+                      Applications Web
                     </a>
                 </li>
                 <!-- pizzeria -->
                 <li>
                     <a href="{% url 'pizzeria' %}">
-                        pizza
+                        Applications mobiles
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Projets collaboratifs<
                     </a>
                 </li>
                 <!-- End Dropdown -->
@@ -63,18 +69,18 @@
                 <!-- ===== sub Dropdown ===== -->
                 <li class="dropdown">
                     <a href="#">
-                        <span>Sub Menu</span>
+                        <span>Tout les Projets -></span>
                         <i class="bi bi-chevron-down dropdown-indicator"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="#">Sub Menu 1</a>
+                            <a href="{% url 'eco-demenagement' %}">€co Demenagement</a>
                         </li>
                         <li>
-                            <a href="#">Sub Menu 2</a>
+                            <a href="#">La cordée num</a>
                         </li>
                         <li>
-                            <a href="#">Sub Menu 3</a>
+                            <a href="#">Pizza</a>
                         </li>
                     </ul>
                 </li>
