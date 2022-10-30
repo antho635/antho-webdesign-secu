@@ -4,7 +4,10 @@ from django.urls import reverse
 
 class Category(models.Model):
     category_name = models.CharField(max_length=120, blank=True, null=True)
-    slug_category = models.SlugField(max_length=120, blank=True, null=True)
+    slug = models.SlugField(max_length=120, blank=True, null=True)
+    image_cat = models.ImageField(upload_to='images/portfolio/category',
+                                  default='images/portfolio/category/default.jpg')
+    description_cat = models.TextField(max_length=2500, blank=True, null=True)
 
     def __str__(self):
         return self.category_name
@@ -15,7 +18,7 @@ class Category(models.Model):
         verbose_name = 'Categorie'
 
     def get_absolute_url(self):
-        return reverse('category_test_web', args=[self.slug_category])
+        return reverse('list_categories', args=[self.slug])
 
 
 # Create your models here.
@@ -41,9 +44,9 @@ class Project(models.Model):
     project_status = models.CharField(choices=PROJECT_STATUS, default='en_cours', max_length=10)
     language_tags = models.CharField(max_length=50)
     project_thumbnail = models.ImageField(upload_to='images/portfolio/project/',
-                                          default='images/portfolio/project/default.png')
+                                          default='images/portfolio/project/default.jpg')
     project_url = models.URLField(max_length=200, default='#')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category_project',
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category',
                                  blank=True, null=True)
 
     def __str__(self):
@@ -54,7 +57,7 @@ class Project(models.Model):
         verbose_name = 'Project'
 
     def get_absolute_url(self):
-        return reverse('details_test_web', args=[self.slug])
+        return reverse('project_web_detail', args=[self.slug])
 
 
 class DetailsProject(models.Model):

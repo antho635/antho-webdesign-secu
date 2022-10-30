@@ -41,29 +41,13 @@
           </a>
             <ul>
                 <!-- eco déménagement -->
-                <li>
-                    <a href="{% url 'projet_web' %}">
-                        Sites vitrines
-                    </a>
-                </li>
-                <!-- la cordée numérique -->
+                {% for projects in project_list %}
                 <li>
                     <a href="#">
-                      Applications Web
+                        {{ projects.category.category_name }}
                     </a>
                 </li>
-                <!-- pizzeria -->
-                <li>
-                    <a href="{% url 'pizzeria' %}">
-                        Applications mobiles
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        Projets collaboratifs
-                    </a>
-                </li>
+                {% endfor %}
                 <!-- End Dropdown -->
 
                 <!-- ===== sub Dropdown ===== -->
