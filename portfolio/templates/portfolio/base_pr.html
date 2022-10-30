@@ -67,23 +67,23 @@
                 <!-- End Dropdown -->
 
                 <!-- ===== sub Dropdown ===== -->
-                <li class="dropdown">
+                 <li class="dropdown">
                     <a href="#">
                         <span>Tout les Projets -></span>
                         <i class="bi bi-chevron-down dropdown-indicator"></i>
                     </a>
+
                     <ul>
-                        <li>
-                            <a href="{% url 'eco-demenagement' %}">€co Demenagement</a>
-                        </li>
-                        <li>
-                            <a href="#">La cordée num</a>
-                        </li>
-                        <li>
-                            <a href="#">Pizza</a>
-                        </li>
+                        {% for projects in project_list %}
+                            <li>
+                                <a href="{% url 'projet_web' %}">
+                                    {{ projects.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </li>
+
             </ul>
           </li>
           <!-- ===== End sub Dropdown ===== -->
