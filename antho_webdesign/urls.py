@@ -10,5 +10,5 @@ urlpatterns = [
     path('portfolio/', include('portfolio.urls')),
     path('', include('blog.urls')),
     path('', include('contact.urls')),
-    path('', include('for_test.urls')),
+    # path('', include('for_test.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

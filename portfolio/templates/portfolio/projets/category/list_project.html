@@ -1,0 +1,55 @@
+{% extends 'portfolio/base_pr.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Boucle sur les projets -->
+<style>
+.box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+ text-align: center;
+ margin: 80px auto;
+}
+
+</style>
+    <div class="title">
+        <h1>Liste de mes projets</h1>
+    </div>
+    {% for project in project_list %}
+        <div class="card">
+
+                <img class="animate" src="{{ project.project_thumbnail.url }}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
+                <div class="card__content">
+
+                    <h2 class="card__title animate text-dark">
+                        <a href="javascript:" class="text-dark">{{ project.title }}</a>
+                    </h2>
+                    <p class="text-dark">
+                        {{ project.description }}
+                    </p>
+                </div>
+            <div class="col-xs-12 col-md-6">
+                <a href="{% url 'details_projet' project.slug %}" class="btn btn-primary">Voir le projet</a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -33,7 +33,7 @@
 
             <!-- ===== Dropdown ===== -->
           <li class="dropdown">
-              <a href="{% url 'list_categories' %}">
+              <a href="{% url 'category_list' %}">
                   <span>
                       Category Projets
                   </span>
@@ -41,11 +41,11 @@
           </a>
             <ul>
                 <!-- eco déménagement -->
-                {% for category in categories %}
+                {% for categorie in categories %}
                 <li>
-                    <a href="#">
-                        {{ category.category_name }}
-                    </a>
+
+                        {{ categorie.category_name }}
+
                 </li>
                 {% endfor %}
                 <!-- End Dropdown -->
@@ -60,7 +60,7 @@
                     <ul>
                         {% for projects in project_list %}
                             <li>
-                                <a href="{% url 'projet_web' %}">
+                                <a href="{% url 'project_list' %}">
                                     {{ projects.title }}
                                 </a>
                             </li>
