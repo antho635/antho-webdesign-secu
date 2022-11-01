@@ -73,12 +73,12 @@
 								<li>
 									<i class="bi bi-chevron-right"></i>
 									<strong>Categorie:</strong>
-									<span>{{ details_project.category_name }}</span>
+									<span>{{ details_project.category }}</span>
 								</li>
 								<li>
 									<i class="bi bi-chevron-right"></i>
 									<strong>Status:</strong>
-									<span>{{ details_project.project_status }}</span>
+									<span>{{ details_project.project_status.title }}</span>
 								</li>
 							</ul>
 						</div>
@@ -114,7 +114,7 @@
 	<!-- End About Section -->
 	<!-- btn retour -->
 	<div class="box">
-		<a href="{% url 'project_list' %}" class="btn btn-warning boutons">Retour liste {{ project.category_name }}</a>
+		<a href="{% url 'project_list' %}" class="btn btn-warning boutons">Retour liste {{ details_project.category }}</a>
 		<a href="{% url 'category_list' %}" class="btn btn-danger boutons">liste des categories</a>
 	</div>
 </main>
