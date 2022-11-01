@@ -40,3 +40,7 @@ def project_list(request):
 def details_projet(request, slug):
     details_project = get_object_or_404(Project, slug=slug)
     return render(request, 'portfolio/projets/category/details_projet.html', {'details_project': details_project})
+
+# Import Librariesfrom django.shortcuts
+# import renderimport datetime
+# Create your views here.def home(request):    currentdate = datetime.date.today()    formatDate = currentdate.strftime("%d-%b-%y")    return render(request,'home.html',                  {'current_date':currentdate,                   'format_date':formatDate} )

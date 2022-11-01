@@ -55,6 +55,7 @@ class Project(models.Model):
 
     category = models.ForeignKey(Categorie, on_delete=models.CASCADE, related_name='projects',
                                  blank=True, null=True)
+    project_goal = models.CharField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return self.title
