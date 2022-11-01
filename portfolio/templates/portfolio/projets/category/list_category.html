@@ -36,82 +36,25 @@
 
     
         <div class="box">
+            {% for cat in categorie_list %}
             <div class="card">
+                    <img class="animate" src="{{ cat.image_cat.url }}" alt="img" style="width:45%; height: 100%; margin: 0; padding: 0;"/>
+                    <div class="card__content">
 
-                <img class="animate" src="{% static 'images/portfolio/liste/site-vitrine.jpg' %}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
-                <div class="card__content">
+                            <h2 class="card__title animate text-dark">
+                                <a href="javascript:" class="text-dark">{{ cat.category_name }}</a>
+                            </h2>
+                            <p class="text-dark">
+                                {{ cat.description_cat }}
+                            </p>
+                    </div>
 
-                    {% for cat in categorie_list %}
-                        <h2 class="card__title animate text-dark">
-                            <a href="javascript:" class="text-dark">{{ cat.category_name }}</a>
-                        </h2>
-                        <p class="text-dark">
-                            {{ cat.description_cat }}
-                        </p>
-                    {% endfor %}
-                </div>
                     <button class="card__btn">
                         <a href="{% url 'project_list' %}"><!-- TODO : Lien vers la page liste site vitrine -->
                             <i class="fa fa-arrow-right fa-fw"></i>
                         </a>
                     </button>
                 </div>
-
-            <div class="card">
-                <img class="animate" src="{% static 'images/portfolio/liste/applications-web.jpg' %}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
-                <div class="card__content">
-
-                    <h2 class="card__title animate text-dark">
-                        <a href="javascript:" class="text-dark">Applications Web</a>
-                    </h2>
-                    <p class="text-dark">
-                        " En informatique, une application web (aussi appelée web application,
-                        de l'anglais et français) est une application manipulable directement en ligne grâce à un navigateur web
-                        et qui ne nécessite donc pas d'installation sur les machines clientes, contrairement aux applications mobiles. "
-                    </p>
-                </div>
-                    <button class="card__btn">
-                        <a href="#"><!-- TODO : Lien vers la page liste application web -->
-                            <i class="fa fa-arrow-right fa-fw"></i>
-                        </a>
-                    </button>
-                </div>
-
-            <div class="card">
-                <img class="animate" src="{% static 'images/portfolio/liste/applications-mobiles.jpg' %}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
-                <div class="card__content">
-
-                    <h2 class="card__title animate text-dark">
-                        <a href="javascript:" class="text-dark">Applications Mobiles</a>
-                    </h2>
-                    <p class="text-dark">
-                        " Une application mobile est un logiciel applicatif développé pour un appareil électronique mobile,
-                        tel qu'un assistant personnel, un téléphone portable, un smartphone, un baladeur numérique, une tablette tactile. "
-                    </p>
-                </div>
-                    <button class="card__btn">
-                        <a href="#"><!-- TODO : Lien vers la page liste application mobile -->
-                            <i class="fa fa-arrow-right fa-fw"></i>
-                        </a>
-                    </button>
-                </div>
-
-    <div class="card">
-                <img class="animate" src="{% static 'images/portfolio/liste/collab.png' %}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
-                <div class="card__content">
-
-                    <h2 class="card__title animate text-dark">
-                        <a href="javascript:" class="text-dark">Projets collaboratifs</a>
-                    </h2>
-                    <p class="text-dark">
-                        " Projets collaboratifs hebergés sur GitHub. "
-                    </p>
-                </div>
-                    <button class="card__btn">
-                        <a href="#"><!-- TODO : Lien vers la page liste des projets collaboratifs -->
-                            <i class="fa fa-arrow-right fa-fw"></i>
-                        </a>
-                    </button>
-                </div>
+        {% endfor %}
             </div>
 {% endblock %}
