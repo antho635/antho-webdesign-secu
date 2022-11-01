@@ -8,43 +8,36 @@
 <div class="separateur"></div>
 
 <div class="container box-blog" style="flex-direction:row;">
-
-    {% for post in post_list %}
-        {% if post.category.name == 'Développement' or post.category.name == 'Programmation' %}
-            <div class="container-post">
-                <div class="wrapper">
-                    <div class="box-card-list">
-                        <img class="banner-image" src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
-                        <div class="box-card-infos">
-                            <h1 class="text-card-blog-list">{{ post.title }}</h1>
-
-                            <p class="text-card-blog-list">
-                                Auteur : {{ post.author }}
-                            </p>
-                            <br>
-                            <br>
-                            <p style="margin: auto">Publié le :
-                            <br>
-                            {{ post.created_on|date:"d/m/Y" }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="button-wrapper">
-                    <button class="btn outline">
-                        <a href="{% url 'post_detail_dev' post.slug  %}">
-                            DETAILS
-                        </a>
-                    </button>
-                        <p class="btn fill btn-warning">
-                            <strong class="tags">{{ post.tags }}</strong>
-                        </p>
-                </div>
-            </div>
-        {% endif %}
-    {% endfor %}
-    <a class="btn btn-warning" href="{% url 'index_blog' %}">Retour</a>
+	{% for post in post_list %}{% if post.category.name == 'Développement' or post.category.name == 'Programmation' %}
+	<div class="container-post">
+		<div class="wrapper">
+			<div class="box-card-list">
+				<img class="banner-image" src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
+				<div class="box-card-infos">
+					<h1 class="text-card-blog-list">{{ post.title }}</h1>
+					<p class="text-card-blog-list">
+						Auteur : {{ post.author }}
+					</p>
+					<br>
+					<br>
+					<p style="margin: auto">
+						Publié le :
+						<br>
+						{{ post.created_on|date:"d/m/Y" }}
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="button-wrapper">
+			<button class="btn outline"><a href="{% url 'post_detail_dev' post.slug  %}">DETAILS</a></button>
+			<p class="btn fill btn-warning">
+				<strong class="tags">{{ post.tags }}</strong>
+			</p>
+		</div>
+	</div>
+	{% endif %}{% endfor %}
+	<a class="btn btn-warning" href="{% url 'index_blog' %}">Retour</a>
 </div>
+
 
 {%  endblock %}

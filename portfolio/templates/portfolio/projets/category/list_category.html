@@ -30,31 +30,24 @@
 }
 
 </style>
-    <div class="title">
-        <h1>Liste de mes projets</h1>
-    </div>
+<div class="title">
+	<h1>Liste de mes projets</h1>
+</div>
 
-    
-        <div class="box">
-            {% for cat in categorie_list %}
-            <div class="card">
-                    <img class="animate" src="{{ cat.image_cat.url }}" alt="img" style="width:45%; height: 100%; margin: 0; padding: 0;"/>
-                    <div class="card__content">
-
-                            <h2 class="card__title animate text-dark">
-                                <a href="javascript:" class="text-dark">{{ cat.category_name }}</a>
-                            </h2>
-                            <p class="text-dark">
-                                {{ cat.description_cat }}
-                            </p>
-                    </div>
-
-                    <button class="card__btn">
-                        <a href="{% url 'project_list' %}"><!-- TODO : Lien vers la page liste site vitrine -->
-                            <i class="fa fa-arrow-right fa-fw"></i>
-                        </a>
-                    </button>
-                </div>
-        {% endfor %}
-            </div>
+<div class="box">
+	{% for cat in categorie_list %}
+	<div class="card">
+		<img class="animate" src="{{ cat.image_cat.url }}" alt="img" style="width:45%; height: 100%; margin: 0; padding: 0;"/>
+		<div class="card__content">
+			<h2 class="card__title animate text-dark"><a href="javascript:" class="text-dark">{{ cat.category_name }}</a></h2>
+			<p class="text-dark">
+				{{ cat.description_cat }}
+			</p>
+		</div>
+		<button class="card__btn">
+			<a href="{% url 'project_list' %}"><!-- TODO : Lien vers la page liste site vitrine --><i class="fa fa-arrow-right fa-fw"></i></a>
+		</button>
+	</div>
+	{% endfor %}
+</div>
 {% endblock %}
