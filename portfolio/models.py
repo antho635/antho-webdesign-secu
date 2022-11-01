@@ -37,9 +37,9 @@ class Categorie(models.Model):
 
 
 PROJECT_STATUS = (
-    ('en_cours', 'En Cours'),
-    (2, 'En ligne'),
-    (3, 'Suspendu'),
+    ('En Cours', 'En Cours'),
+    ('En ligne', 'En ligne'),
+    ('Suspendu', 'Suspendu'),
 )
 
 
