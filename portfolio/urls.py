@@ -7,9 +7,4 @@ urlpatterns = [
     path('liste/categorie/', category_list, name='category_list'),
     path('liste/projets/', project_list, name='project_list'),
     path('details/projet/<slug:slug>/', details_projet, name='details_projet'),
-
-
-    # path('portfolio/project/list/<slug:slug>/', ProjectListViewDetails.as_view(), name='project_details'),
-    # path("contact/", contactView, name="contact"),
-    # path("contact/", contact_form, name="contact_form"),
 ]

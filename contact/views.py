@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .forms import ContactForm
 
 
@@ -15,4 +15,4 @@ def contact_view(request):
 
 
 def success_view(request):
-    return HttpResponse("Success! Thank you for your message.")
+    return HttpResponse("Succès! Merci pour votre message.")
