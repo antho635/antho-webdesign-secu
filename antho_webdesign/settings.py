@@ -1,4 +1,6 @@
 from pathlib import Path
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +15,7 @@ SECRET_KEY = 'django-insecure-$qk2g8ou45-5#u55wu9a(kq)m!y=l2*v*ya=v1asx#3z3oe_5j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -105,9 +107,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = 'static/'
+STATIC_ROOT = 'static'
 STATICFILES_DIRS = [
-    'staticfiles'
+    'staticfiles/'
 ]
 
 MEDIA_URL = 'media/'
@@ -122,3 +124,5 @@ DEFAULT_FROM_EMAIL = "kipik@toutchy.com"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 SASS_COMPILER_MAP = True
+
+django_heroku.settings(locals())

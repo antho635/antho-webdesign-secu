@@ -1,0 +1,1 @@
+web: gunicorn antho_webdesign.wsgi --log-file -
