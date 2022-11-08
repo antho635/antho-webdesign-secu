@@ -35,7 +35,7 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     tags = models.CharField(max_length=50)
     category = models.ForeignKey('Category', on_delete=models.CASCADE, default=1)
-    thumbnail = models.ImageField(upload_to='images/blog/thumbnails/', default='blog/thumbnails/default.jpg')
+    thumbnail = models.ImageField(upload_to='images/blog/thumbnails/', default='images/blog/thumbnails/default.jpg')
 
     class Meta:
         ordering = ['-created_on']
