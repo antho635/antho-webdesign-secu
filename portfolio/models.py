@@ -51,9 +51,9 @@ class Project(models.Model):
     project_status = models.CharField(choices=PROJECT_STATUS, default='en_cours', max_length=30)
     project_thumbnail = models.ImageField(upload_to='images/portfolio/project/',
                                           default='images/portfolio/project/default.jpg')
-    project_url = models.URLField(max_length=200, default='antho635.github.io/')
+    project_url = models.URLField(max_length=200, default='#')
 
-    category = models.ForeignKey(Categorie, on_delete=models.CASCADE, related_name='projects',
+    category = models.ForeignKey(Categorie, on_delete=models.CASCADE, related_name='cat_projects',
                                  blank=True, null=True)
     project_goal = models.CharField(max_length=500, blank=True, null=True)
 
