@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.views import generic
 
-from .models import Post
+from .models import Post, Category
 
 
 def index_blog(request):
@@ -67,3 +67,11 @@ def cryptos_actus(request):
 
 def ia_actus(request):
     return render(request, 'blog/ia/list_post_ia.html')
+
+
+def blog_category_list(request):
+    queryset = Category.objects.all()
+    context = {
+        'categorie_list': queryset
+    }
+    return render(request, 'blog/list_category.html', context)
