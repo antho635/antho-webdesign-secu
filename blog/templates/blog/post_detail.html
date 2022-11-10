@@ -2,13 +2,35 @@
 {% load static %}
 
 {% block content %}
+<style>
 
+/* Élément | http://127.0.0.1:8000/blog/list/developpement/quest-ce-que-le-webp-pourquoi-lutiliser/ */
+
+.col-md-8 {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Élément | http://127.0.0.1:8000/blog/list/developpement/quest-ce-que-le-webp-pourquoi-lutiliser/ */
+
+.post-img {
+  width: 33%;
+}
+
+/* Élément | http://127.0.0.1:8000/blog/list/developpement/quest-ce-que-le-webp-pourquoi-lutiliser/ */
+
+.flex-post-head {
+  display: flex;
+}
+
+</style>
     <div class="separateur"></div>
     <!-- ===== container article ===== -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 card mb-4  mt-3 left top">
-                <div class="card-body">
+                <div class="card-body text-dark">
 
                     <!-- head du blog -->
                     <div class="flex-post-head">
