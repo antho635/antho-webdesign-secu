@@ -3,10 +3,21 @@
 
 {% block content %}
 <style>
+
+.container-post {
+  display: flex;
+  background: rgba(81, 132, 230, 0.25);
+  margin: 40px auto;
+  align-items: center;
+  text-align: center;
+}
+
 .box-card-list {
     display: flex;
 }
-
+.banner-image{
+    width:33%;
+}
 </style>
 <!--===== separateur =====-->
 <div class="separateur"></div>
@@ -18,7 +29,7 @@
 	<div class="container-post">
 		<div class="wrapper">
 			<div class="box-card-list">
-				<img class="banner-image" src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
+				<img class="banner-image" src="{{ post.thumbnail.url }}" alt="{{ post.title }}" style="width: 33%">
 				<div class="box-card-infos">
 					<h1 class="text-card-blog-list">{{ post.title }}</h1>
 					<p class="text-card-blog-list">
