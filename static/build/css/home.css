@@ -2258,7 +2258,7 @@ a {
 
 /* :: card :: */
 .card {
-  max-width: 850px;
+  max-width: none;
   width: 95%;
   margin-inline: auto;
   display: grid;
