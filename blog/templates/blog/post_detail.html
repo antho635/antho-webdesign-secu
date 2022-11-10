@@ -4,21 +4,15 @@
 {% block content %}
 <style>
 
-/* Élément | http://127.0.0.1:8000/blog/list/developpement/quest-ce-que-le-webp-pourquoi-lutiliser/ */
-
 .col-md-8 {
   width: auto;
   display: flex;
   flex-direction: column;
 }
 
-/* Élément | http://127.0.0.1:8000/blog/list/developpement/quest-ce-que-le-webp-pourquoi-lutiliser/ */
-
 .post-img {
   width: 33%;
 }
-
-/* Élément | http://127.0.0.1:8000/blog/list/developpement/quest-ce-que-le-webp-pourquoi-lutiliser/ */
 
 .flex-post-head {
   display: flex;
@@ -33,7 +27,7 @@
                 <div class="card-body text-dark">
 
                     <!-- head du blog -->
-                    <div class="flex-post-head">
+                    <div class="flex-post-head text-dark">
                         <h1 class="post-title">
                             {% block title %}
                                 {{ post.title }}
@@ -44,12 +38,12 @@
 
                     <!-- ===== body du blog ===== -->
                     <!-- auteur et date -->
-                    <p class=" text-muted">
+                    <p class="text-muted text-dark">
                         {{ post.author }} | {{ post.created_on }}
                     </p>
 
                     <!-- contenu de l'article du blog -->
-                    <p class="card-text ">
+                    <p class="card-text text-dark">
                         {{ object.content | safe }}
                     </p>
 
