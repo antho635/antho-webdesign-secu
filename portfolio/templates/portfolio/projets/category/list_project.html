@@ -10,19 +10,17 @@
   align-items: center;
 }
 
-.img_project {
-    display: flex;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-width: 250px;
+.card__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
-    text-align: center;
-    margin: 50px auto;
+ text-align: center;
+ margin: 80px auto;
 }
+
 </style>
     <div class="title">
 	    <h1>Liste de mes projets</h1>
@@ -30,14 +28,14 @@
 
     {% for project in project_list %}
         <div class="card">
-            <img class="animate img_project" src="{{ project.project_thumbnail.url }}" alt="img"/>
+            <img class="animate" src="{{ project.project_thumbnail.url }}" alt="img" style="height: 100%; margin: 0; padding: 0; width: 300px;"/>
             <div class="card__content">
                 <h2 class="card__title animate text-dark">
                     <a href="javascript:" class="text-dark">{{ project.title }}</a>
                 </h2>
                 <p class="text-dark">{{ project.date_created_on|date:'d/m/Y' }}</p>
                 <p class="text-dark">
-                    {{ project.project_status }} - {{ project.date_created_on|date:'d/m/Y' }}
+                    {{ project.project_status }}
                 </p>
             </div>
             <div class="col-xs-12 col-md-6">
