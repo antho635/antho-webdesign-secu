@@ -2604,6 +2604,7 @@ p {
   .card {
     grid-template-columns: auto 70px minmax(100px, 400px);
     grid-template-rows: repeat(3, auto);
+    width: 45%;
 
     &:nth-child(even) {
       grid-template-columns: minmax(100px, 400px) 70px auto;

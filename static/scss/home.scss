@@ -2293,7 +2293,7 @@ a {
 
 /* :: card :: */
 .card {
-  max-width:none;
+  max-width: 850px;
   width: 95%;
   margin-inline: auto;
   display: grid;
@@ -2355,7 +2355,6 @@ a {
 /* :: utilities :: */
 .animate {
   transition: all 0.3s ease;
-
 }
 
 /* :: mediaqueries :: */
