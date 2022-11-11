@@ -2,25 +2,6 @@
 {% load static %}
 
 {% block content %}
-<style>
-
-.container-post {
-  display: flex;
-  background: rgba(81, 132, 230, 0.25);
-  margin: 40px auto;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  border-radius: 20px;
-}
-
-.box-card-list {
-    display: flex;
-}
-img {
-    width:33%;
-}
-</style>
 <!--===== separateur =====-->
 <div class="separateur"></div>
     <h1 class="text-center">L'actus des devs</h1>
@@ -31,7 +12,7 @@ img {
 	<div class="container-post">
 		<div class="wrapper">
 			<div class="box-card-list">
-				<img class="banner-image" src="{{ post.thumbnail.url }}" alt="{{ post.title }}" style="width: 33%">
+				<img class="banner-image" src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
 				<div class="box-card-infos">
 					<h1 class="text-card-blog-list">{{ post.title }}</h1>
 					<p class="text-card-blog-list">

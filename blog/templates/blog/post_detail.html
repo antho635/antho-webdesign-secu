@@ -2,32 +2,16 @@
 {% load static %}
 
 {% block content %}
-<style>
 
-.col-md-8 {
-  width: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.post-img {
-  width: 33%;
-}
-
-.flex-post-head {
-  display: flex;
-}
-
-</style>
     <div class="separateur"></div>
     <!-- ===== container article ===== -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 card mb-4  mt-3 left top">
-                <div class="card-body text-dark">
+                <div class="card-body">
 
                     <!-- head du blog -->
-                    <div class="flex-post-head text-dark">
+                    <div class="flex-post-head">
                         <h1 class="post-title">
                             {% block title %}
                                 {{ post.title }}
@@ -38,12 +22,12 @@
 
                     <!-- ===== body du blog ===== -->
                     <!-- auteur et date -->
-                    <p class="text-muted text-dark">
+                    <p class=" text-muted">
                         {{ post.author }} | {{ post.created_on }}
                     </p>
 
                     <!-- contenu de l'article du blog -->
-                    <p class="card-text text-dark">
+                    <p class="card-text ">
                         {{ object.content | safe }}
                     </p>
 
