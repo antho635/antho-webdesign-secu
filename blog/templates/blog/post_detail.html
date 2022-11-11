@@ -23,7 +23,7 @@
                     <!-- ===== body du blog ===== -->
                     <!-- auteur et date -->
                     <p class=" text-muted">
-                        {{ post.author }} | {{ post.created_on }}
+                        {{ post.author }} | {{ post.created_on|date:"d/m/Y" }}
                     </p>
 
                     <!-- contenu de l'article du blog -->
