@@ -6,7 +6,11 @@ from .models import Post, Category
 
 
 def index_blog(request):
-    return render(request, 'blog/index_blog.html')
+    queryset = Post.objects.all()
+    context = {
+        'posts_list': queryset
+    }
+    return render(request, 'blog/index_blog.html', context)
 
 
 def index_test(request):
