@@ -2,7 +2,58 @@
 
 {% block content %}
 {% load static %}
+<style>
+@media screen and (max-width: 850px) {
 
+    .box-env {
+      display: flex;
+      width: 80%;
+      margin: 30px auto;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 0;
+    }
+
+    .services .icon-box {
+      width: 50%;
+      justify-content: center;
+      margin: auto;
+    }
+
+    /* Élément | https://anthowebdesign.herokuapp.com/portfolio/ */
+
+    .row {
+      display: flex;
+      width: 100%;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    .icon-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: auto;
+      width: 100%;
+    }
+
+    /* Élément | https://anthowebdesign.herokuapp.com/portfolio/ */
+
+    .title {
+      margin: 0;
+      text-align: center;
+    }
+
+    /* Élément | https://anthowebdesign.herokuapp.com/portfolio/ */
+
+    .description {
+      margin: 20px 0;
+    }
+
+}
+
+</style>
 <main id="main" data-aos="fade" data-aos-delay="1500" class="bg-dark">
 
 <!-- ======= Hero Section ======= -->
