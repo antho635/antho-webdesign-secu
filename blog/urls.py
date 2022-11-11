@@ -1,12 +1,12 @@
 from django.urls import path
 
-from .views import PostDetail, index_test, index_blog, \
+from .views import PostDetail, PostList, index_test, index_blog, \
     DevActus, DevActusDetail, HackActus, CryptosActus, IaActus, DevActusTest, blog_category_list
 
 urlpatterns = [
     path('blog/', index_blog, name="index_blog"),
     path('blog/test', index_test, name="index_test"),
-    # path('blog/list/', PostList.as_view(), name='list_post'),
+    path('blog/list/', PostList.as_view(), name='list_post'),
     path('blog/list/categorie/', blog_category_list, name='blog_category_list'),
     path('blog/list/developpement/', DevActus.as_view(), name='list_post_dev'),
     path('blog/list/developpement/<slug:slug>/', DevActusDetail.as_view(), name='post_detail_dev'),
