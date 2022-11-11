@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-
 from portfolio.models import Categorie, Project
 
 
@@ -15,10 +14,6 @@ def base(request):
 # Index
 def index(request):
     return render(request, 'portfolio/index.html')
-
-
-def project_category(request):
-    return render(request, 'portfolio/projets/category/project_category.html')
 
 
 def category_list(request):
@@ -40,4 +35,3 @@ def project_list(request):
 def details_projet(request, slug):
     details_project = get_object_or_404(Project, slug=slug)
     return render(request, 'portfolio/projets/category/details_projet.html', {'details_project': details_project})
-
