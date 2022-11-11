@@ -49,7 +49,7 @@ class Project(models.Model):
     description = models.TextField()
     date_created_on = models.DateTimeField(auto_now_add=True)
     project_status = models.CharField(choices=PROJECT_STATUS, default='en_cours', max_length=30)
-    project_thumbnail = models.ImageField(upload_to='images/portfolio/project/',
+    project_thumbnail = models.ImageField(upload_to='images/blog/thumbnails/',
                                           default='images/portfolio/project/default.jpg')
     project_url = models.URLField(max_length=200, default='#')
 
