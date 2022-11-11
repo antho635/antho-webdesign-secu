@@ -4,16 +4,19 @@
 {% block content %}
 <style>
 @media screen and (max-width: 850px) {
+    .container {
+      display:flex;
+      flex-direction: column !important;
+    }
+
     .box-blog {
       display:flex;
-      flex-direction: column;
+      flex-direction: column !important;
       width: 95%;
       margin: auto;
       padding: 0;
       justify-content: center;
     }
-
-    /* Élément | https://anthowebdesign.herokuapp.com/blog/list/developpement/ */
 
     .container-post {
       display: flex;
@@ -22,8 +25,6 @@
       padding: 0;
       margin: auto;
     }
-
-    /* home.css | https://anthowebdesign.herokuapp.com/static/build/css/home.css */
 
     .box-card-list {
       flex-direction: column;
@@ -57,6 +58,9 @@
       width: 100%;
     }
 
+    .fill {
+        padding: 0;
+    }
     .outline + .fill {
       margin: auto;
     }
