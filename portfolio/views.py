@@ -3,17 +3,14 @@ from portfolio.models import Categorie, Project
 
 
 def base(request):
-    queryset = Project.objects.all().Category.objects.all()
-    context = {
-        'categorie_list': queryset,
-        'project_list': queryset,
-    }
-    return render(request, 'portfolio/index.html', context)
+    queryset_cat = Categorie.objects.all()
+    return render(request, 'portfolio/index.html', {'categorie_list': queryset_cat})
 
 
 # Index
 def index(request):
-    return render(request, 'portfolio/index.html')
+    queryset_pro = Project.objects.all()
+    return render(request, 'portfolio/index.html', {'project_list': queryset_pro})
 
 
 def category_list(request):
