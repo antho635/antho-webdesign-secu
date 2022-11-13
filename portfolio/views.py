@@ -3,9 +3,10 @@ from portfolio.models import Categorie, Project
 
 
 def base(request):
-    queryset = Project.objects.all().Category.objects.all()
+    queryset = Project.objects.all()
+    querycat = Categorie.objects.all()
     context = {
-        'categorie_list': queryset,
+        'categorie_list': querycat,
         'project_list': queryset,
     }
     return render(request, 'portfolio/index.html', context)
@@ -13,7 +14,13 @@ def base(request):
 
 # Index
 def index(request):
-    return render(request, 'portfolio/index.html')
+    querycat = Categorie.objects.all()
+    queryset = Project.objects.all()
+    context = {
+        'project_list': queryset,
+        'categorie_list': querycat,
+    }
+    return render(request, 'portfolio/index.html', context)
 
 
 def category_list(request):
