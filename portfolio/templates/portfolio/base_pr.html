@@ -111,7 +111,9 @@
 							<ul>
 								<!-- eco-déménagement -->
 								{% for categories in categorie_list %}
-								<li>{{ categories.category_name }}</li>
+								<li>
+                                    <a href="{% url 'category_list' %}">{{ categories.category_name }}</a>
+                                </li>
 								{% endfor %}
 								<!-- End Dropdown -->
 								<!-- ===== sub Dropdown ===== -->
