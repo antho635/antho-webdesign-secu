@@ -60,10 +60,13 @@
                 <p class="text-dark">
                     {{ project.project_goal }}
                 </p>
+                <div class="col-xs-12 col-md-6">
+                    <a href="{% url 'details_projet' project.slug %}" class="btn btn-primary">Voir le projet</a>
+                </div>
             </div>
-            <div class="col-xs-12 col-md-6">
-                <a href="{% url 'details_projet' project.slug %}" class="btn btn-primary">Voir le projet</a>
-            </div>
+        <!-- <div class="col-xs-12 col-md-6">
+                    <a href="{ url 'details_projet' project.slug %}" class="btn btn-primary">Voir le projet</a>
+                </div> -->
         </div>
     {% endfor %}
 
