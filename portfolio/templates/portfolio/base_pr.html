@@ -130,7 +130,7 @@
 									</a>
 									<ul>
 										{% for projects in project_list %}
-										<li><a href="{% url 'project_list' %}">{{ projects.title }}</a></li>
+										<li><a href="{% url 'project_list' projects.slug %}">{{ projects.title }}</a></li>
 										{% endfor %}
 									</ul>
 								</li>
