@@ -119,7 +119,7 @@
 	<!-- End About Section -->
 	<!-- btn retour -->
 	<div class="box">
-		<a href="{% url 'project_list' %}" class="btn btn-warning boutons">Retour liste <span>{{ details_project.category }}</span></a>
+		<a href="{% url 'project_list' details_project.category.slug %}" class="btn btn-warning boutons">Retour liste <span>{{ details_project.category }}</span></a>
 		<a href="{% url 'category_list' %}" class="btn btn-danger boutons">liste des categories</a>
 	</div>
 </main>
