@@ -1,4 +1,6 @@
 from pathlib import Path
+
+import cloudinary
 import dj_database_url
 import django_heroku
 
@@ -112,7 +114,6 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-
 MEDIA_URL = 'media/'
 MEDIA_ROOT = 'media'
 
@@ -125,5 +126,11 @@ DEFAULT_FROM_EMAIL = "kipik@toutchy.com"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 SASS_COMPILER_MAP = True
+
+cloudinary.config(
+    cloud_name="hk4nncj82",
+    api_key="232256522744372",
+    api_secret="r3_HfhGIf49umuERtu5OvTjhNqo"
+)
 
 django_heroku.settings(locals())
