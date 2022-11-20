@@ -110,9 +110,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    'static/',
 ]
 
 MEDIA_URL = 'media/'
@@ -123,7 +123,7 @@ MEDIA_ROOT = 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DEFAULT_FROM_EMAIL = "kipik@toutchy.com"
+DEFAULT_FROM_EMAIL = "toutchy.kipik@pm.me"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 SASS_COMPILER_MAP = True
