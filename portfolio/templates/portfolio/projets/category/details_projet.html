@@ -37,6 +37,7 @@
         color: var(--color-primary);
     }
 </style>
+
 <main id="main" data-aos="fade" data-aos-delay="1500">
 	<!-- ======= End Page Header ======= -->
 	<div class="page-header d-flex align-items-center">
@@ -119,8 +120,8 @@
 	<!-- End About Section -->
 	<!-- btn retour -->
 	<div class="box">
-		<a href="{% url 'project_list' details_project.category.slug %}" class="btn btn-warning boutons">Retour liste <span>{{ details_project.category }}</span></a>
-		<a href="{% url 'category_list' %}" class="btn btn-danger boutons">liste des categories</a>
+		<a href="{% url 'project_list' details_project.category.slug %}" class="btn btn-warning boutons" style="width: 45%; margin: auto;">Retour liste <span>{{ details_project.category }}</span></a>
+		<a href="{% url 'category_list' %}" class="btn btn-danger boutons" style="width: 45%; margin: auto;">liste des categories</a>
 	</div>
 </main>
 <!-- End #main --
