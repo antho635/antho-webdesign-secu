@@ -64,10 +64,7 @@
                     <a href="{% url 'details_projet' project.slug %}" class="btn btn-primary">Voir le projet</a>
                 </div>
             </div>
-        <!-- <div class="col-xs-12 col-md-6">
-                    <a href="{ url 'details_projet' project.slug %}" class="btn btn-primary">Voir le projet</a>
-                </div> -->
         </div>
     {% endfor %}
-
+    <a href="{% url 'index_portfolio' %}" class="btn btn-primary">Retour à l'accueil</a>
 {% endblock %}
