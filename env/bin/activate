@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/anthonydidio/Documents/antho-webdesign/env"
+VIRTUAL_ENV="/Users/anthonydidio/Documents/GitHub/antho-webdesign-secu/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
