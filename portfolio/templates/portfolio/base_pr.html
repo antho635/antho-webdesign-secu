@@ -7,11 +7,73 @@
 		<title>Portfolio</title>
 		<!--==== fontawesome ====-->
 		<script src="https://kit.fontawesome.com/a2a69c8064.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 		<!--==== style ====-->
 		<link  rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="{% static 'build/css/home.css' %}">
 	</head>
 	<body class="bg-dark">
+    <style>
+
+@media (max-width: 840px) {
+
+    .cache {
+        justify-content: center;
+        margin: auto;
+    }
+
+    /* bootstrap.min.css | https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css */
+    .navbar-collapse {
+        /* flex-basis: 100%; */
+        /* flex-grow: 1; */
+    }
+
+    /* Élément | http://127.0.0.1:8000/# */
+    .navbar-nav {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .cache {
+        display: flex;
+    }
+    .nav-lg {
+        display: none;
+    }
+
+    #header::before {
+      /* position: absolute; */
+      position: fixed;
+    }
+    #header::after {
+      /* position: absolute; */
+      position: fixed;
+    }
+
+    .header-social-links {
+        display: none;
+    }
+
+    .card__title {
+      /* font-size: 35px; */
+      font-size: 1.7em;
+    }
+
+}
+@media (min-width: 840px) {
+    .cache {
+        display: none;
+    }
+
+    .nav-lg {
+        display: flex;
+    }
+}
+
+
+    </style>
 		<!-- ======= Header ======= -->
 		<header id="header" class="header d-flex align-items-center fixed-top">
 			<div class="container-fluid d-flex align-items-center justify-content-between">
@@ -23,9 +85,29 @@
 					<i class="bi bi-camera"></i>
 					<h1>Antho WebDev</h1>
 				</a>
+            <div class="cache">
+                    <div class="navbar-collapse justify-content-md-center" id="myNavbarsExample10">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link menu-anim btn-mbl" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-regular fa-bars"></i>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{% url 'index_portfolio' %}">Accueuil</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'category_list' %}">Catégories</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'index_blog' %}">blog</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'contact' %}">Contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="nav-lg">
 				<nav id="navbar" class="navbar">
 					<ul>
 						<li><a href="{% url 'index_portfolio' %}" class="active">Home</a></li>
+                        <li><a href="{% url 'index_blog' %}">Blog</a></li>
 						<!-- ===== Dropdown ===== -->
 						<li class="dropdown">
 							<a href="{% url 'category_list' %}">
@@ -33,9 +115,11 @@
 								<i class="bi bi-chevron-down dropdown-indicator"></i>
 							</a>
 							<ul>
-								<!-- eco déménagement -->
-								{% for categorie in categories %}
-								<li>{{ categorie.category_name }}</li>
+								<!-- eco-déménagement -->
+								{% for categories in categorie_list %}
+								<li>
+                                    <a href="{% url 'category_list' %}">{{ categories.category_name }}</a>
+                                </li>
 								{% endfor %}
 								<!-- End Dropdown -->
 								<!-- ===== sub Dropdown ===== -->
@@ -53,7 +137,6 @@
 							</ul>
 						</li>
 						<!-- ===== End sub Dropdown ===== -->
-						<li><a href="#">Services</a></li>
 						<li><a href="{% url 'contact' %}">Contact</a></li>
 					</ul>
 				</nav>
@@ -62,9 +145,8 @@
 					<a href="https://github.com/Antho-Webdesign" class="github"><i class="fa fa-2x fa-github"></i></a>
 					<a href="https://github.com/Antho-Webdesign" class="linkedin"><i class="fa fa-2x fa-linkedin"></i></a>
 				</div>
-				<i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-				<i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 			</div>
+            </div>
 		</header>
 		<!-- .End Header -->
 		{% block content %}{% endblock %}

@@ -29,6 +29,35 @@
  margin: 80px auto;
 }
 
+@media screen and (max-width: 850px) {
+    body {
+      width: 100%;
+      margin: 0 !important;
+      padding: 0;
+    }
+
+    .box {
+      margin: auto;
+      width: 90%;
+      padding: 0;
+      justify-content: center;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 40px 0;
+    }
+
+    .card__content {
+      justify-content: center;
+      margin: 0;
+      padding: 0 !important;
+      width: 100%;
+    }
+
+}
 </style>
 <div class="title">
 	<h1>Liste de mes projets</h1>
@@ -37,7 +66,7 @@
 <div class="box">
 	{% for cat in categorie_list %}
 	<div class="card">
-		<img class="animate" src="{{ cat.image_cat.url }}" alt="img" style="width:45%; height: 100%; margin: 0; padding: 0;"/>
+		<img class="animate" src="{{ cat.image_cat.url }}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
 		<div class="card__content">
 			<h2 class="card__title animate text-dark"><a href="javascript:" class="text-dark">{{ cat.category_name }}</a></h2>
 			<p class="text-dark">
