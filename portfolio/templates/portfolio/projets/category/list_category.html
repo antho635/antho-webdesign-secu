@@ -74,7 +74,7 @@
 			</p>
 		</div>
 		<button class="card__btn">
-			<a href="{% url 'project_list' %}"><!-- TODO : Lien vers la page liste site vitrine --><i class="fa fa-arrow-right fa-fw"></i></a>
+			<a href="{% url 'project_list' cat.slug %}"><!-- TODO : Lien vers la page liste site vitrine --><i class="fa fa-arrow-right fa-fw"></i></a>
 		</button>
 	</div>
 	{% endfor %}

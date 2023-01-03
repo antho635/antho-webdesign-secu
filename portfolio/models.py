@@ -20,8 +20,8 @@ class Contact(models.Model):
 class Categorie(models.Model):
     category_name = models.CharField(max_length=120, blank=True, null=True)
     slug = models.SlugField(max_length=120, blank=True, null=True)
-    image_cat = models.ImageField(upload_to='images/portfolio/category/',
-                                  default='images/portfolio/category/default.jpg')
+    image_cat = models.ImageField(upload_to='images/portfolio/prod/category/',
+                                  default='images/blog/thumbnails/default.jpg')
     description_cat = models.TextField(max_length=2500, blank=True, null=True)
 
     def __str__(self):
@@ -49,8 +49,8 @@ class Project(models.Model):
     description = models.TextField()
     date_created_on = models.DateTimeField(auto_now_add=True)
     project_status = models.CharField(choices=PROJECT_STATUS, default='en_cours', max_length=30)
-    project_thumbnail = models.ImageField(upload_to='images/portfolio/project/',
-                                          default='images/portfolio/project/default.png')
+    project_thumbnail = models.ImageField(upload_to='images/portfolio/prod/project/',
+                                          default='images/blog/thumbnails/default.jpg')
     project_url = models.URLField(max_length=200, default='#')
 
     category = models.ForeignKey(Categorie, on_delete=models.CASCADE, related_name='cat_projects',

@@ -31,11 +31,14 @@ def category_list(request):
     return render(request, 'portfolio/projets/category/list_category.html', context)
 
 
-def project_list(request):
-    queryset = Project.objects.all()
+def project_list(request, slug):
+    querycat = Categorie.objects.all()
+    queryset = Project.objects.filter(category__slug=slug)
     context = {
-        'project_list': queryset
+        'project_list': queryset,
+        'categorie_list': querycat,
     }
+
     return render(request, 'portfolio/projets/category/list_project.html', context)
 
 
