@@ -82,8 +82,14 @@
       font-size: 1.1em;
     }
 }
+.separateur {
+  width: 90%;
+  margin: 10px auto 30px auto;
+  height: 1px;
+  border: solid 1px grey;
+}
+
 </style>
-    <div class="separateur"></div>
     <!-- ===== container article ===== -->
     <div class="container">
         <div class="row">
@@ -108,8 +114,39 @@
 
                     <!-- contenu de l'article du blog -->
                     <p class="card-text ">
-                        {{ object.content | safe }}
+                        {{ post.content | safe }}
                     </p>
+
+                    <div class="separateur"></div>
+
+                    <!-- contenu de l'article du blog -->
+                    <p class="card-text ">
+                        {{ post.content2 | safe }}
+                    </p>
+
+                    {% if post.content3 %}
+                    <div class="separateur"></div>
+                      <!-- contenu de l'article du blog -->
+                      <p class="card-text ">
+                          {{ post.content3 | safe }}
+                      </p>
+                    {% endif %}
+
+                    {% if post.content4 %}
+                    <div class="separateur"></div>
+                      <!-- contenu de l'article du blog -->
+                      <p class="card-text ">
+                          {{ post.content4 | safe }}
+                      </p>
+                    {% endif %}
+
+                    {% if post.content5.exists %}
+                    <div class="separateur"></div>
+                      <!-- contenu de l'article du blog -->
+                      <p class="card-text ">
+                          {{ post.content5 | safe }}
+                      </p>
+                    {% endif %}
 
                     <a class="btn btn-warning" href="{% url 'list_post_dev' %}">Retour</a>
 
