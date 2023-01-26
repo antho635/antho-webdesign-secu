@@ -1,4 +1,4 @@
-#!/Users/anthonydidio/Documents/git-antho/portfolioenv/bin/python3.10
+#!/Users/anthonydidio/Documents/git-antho/portfolioenv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

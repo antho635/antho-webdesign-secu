@@ -29,6 +29,14 @@
  margin: 80px auto;
 }
 
+.card {
+  width: 50%;
+  max-width: none !important;
+}
+
+.card-img {
+  width: 33%;
+}
 </style>
     <div class="title">
         <h1>Liste de mes projets</h1>
@@ -36,7 +44,7 @@
     {% for project in project_list %}
         <div class="card">
 
-                <img class="animate" src="{{ project.project_image }}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
+                <img class="animate card-img" src="{{ project.project_image }}" alt="img"/>
                 <div class="card__content">
 
                     <h2 class="card__title animate text-dark">

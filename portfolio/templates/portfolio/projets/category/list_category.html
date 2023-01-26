@@ -3,80 +3,161 @@
 
 {% block content %}
     <!-- Boucle sur les projets -->
-<style>
-.box {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 100%;
+    <style>
+        .box {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: 100%;
 
-}
-.card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+        }
 
-.card__content {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
+        .card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 45%;
+            max-width: none !important;
+        }
 
-.title {
- text-align: center;
- margin: 80px auto;
-}
+        .card__content {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            width: 45% !important;
+        }
 
-@media screen and (max-width: 850px) {
-    body {
-      width: 100%;
-      margin: 0 !important;
-      padding: 0;
-    }
+        .title {
+            text-align: center;
+            margin: 80px auto;
+        }
 
-    .box {
-      margin: auto;
-      width: 90%;
-      padding: 0;
-      justify-content: center;
-    }
+        .card__content {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto;
+            width: auto;
+            padding: 0 !important;
+        }
 
-    .card {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      margin: 40px 0;
-    }
+        .title {
+            text-align: center;
+            margin: 80px auto;
+        }
 
-    .card__content {
-      justify-content: center;
-      margin: 0;
-      padding: 0 !important;
-      width: 100%;
-    }
 
-}
-</style>
-<div class="title">
-	<h1>Liste de mes projets</h1>
-</div>
+        .card-img {
+            width: 30% !important;
+            padding: 10px !important;
+            border-radius: 30px;
+            border: solid 1px darkgrey;
+            margin: 20px !important;
+        }
 
-<div class="box">
-	{% for cat in categorie_list %}
-	<div class="card">
-		<img class="animate" src="{{ cat.image_cat.url }}" alt="img" style="height: 100%; margin: 0; padding: 0;"/>
-		<div class="card__content">
-			<h2 class="card__title animate text-dark"><a href="javascript:" class="text-dark">{{ cat.category_name }}</a></h2>
-			<p class="text-dark">
-				{{ cat.description_cat }}
-			</p>
-		</div>
-		<button class="card__btn">
-			<a href="{% url 'project_list' cat.slug %}"><!-- TODO : Lien vers la page liste site vitrine --><i class="fa fa-arrow-right fa-fw"></i></a>
-		</button>
-	</div>
-	{% endfor %}
-</div>
+        .card-titre {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #8a484b !important;
+        }
+
+        .card-date {
+            font-size: 1em;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .card-goal {
+            font-weight: bold;
+            color: darkorange !important;
+            font-size: 1.2em;
+        }
+
+        @media screen and (max-width: 1550px) {
+            .box {
+              flex-direction: column !important;
+            }
+
+            .card {
+              width: 66% !important;
+            }
+        }
+
+        @media screen and (max-width: 850px) {
+            body {
+                width: 100%;
+                margin: 0 !important;
+                padding: 0;
+            }
+
+            .box {
+                margin: auto;
+                width: 100%;
+                padding: 0;
+                justify-content: center;
+            }
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin: 40px auto;
+            }
+
+            .card__content {
+                justify-content: center;
+                padding: 0 !important;
+                margin: 60px auto;
+                width: 80% !important;
+                text-align: center;
+            }
+
+            .card-titre {
+                font-size: 1.2em;
+            }
+
+            .card__btn {
+              border: none;
+              background: var(--dark);
+              color: white;
+              padding: 10px;
+              font-size: 18px;
+              position: absolute;
+              bottom: -20px;
+              left: 50%;
+              transform: translateX(-50%);
+              margin-top: 20px;
+            }
+
+            .card-img {
+                width: 66% !important;
+            }
+        }
+    </style>
+    <div class="title">
+        <h1>Liste de mes projets</h1>
+    </div>
+
+    <div class="box">
+        {% for cat in categorie_list %}
+            <div class="card">
+                <img class="card-img animate" src="{{ cat.image_cat.url }}" alt="img"
+                     style="height: 100%; margin: 0; padding: 0;"/>
+                <div class="card__content">
+                    <h2 class="card__title animate text-dark">
+                        <a href="javascript:" class="text-dark card-titre">{{ cat.category_name }}</a></h2>
+                    <p class="text-dark card-date">
+                        {{ cat.description_cat }}
+                    </p>
+                </div>
+                <button class="card__btn">
+                    <a class="card-goal" href="{% url 'project_list' cat.slug %}"><!-- TODO : Lien vers la page liste site vitrine -->
+                        <i class="fa fa-arrow-right fa-fw"></i>
+                    </a>
+                </button>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
