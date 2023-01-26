@@ -1,3 +1,8 @@
 
 env/lib/python3.10/site-packages/certifi-2022.9.14.dist-info/LICENSE
 *.pyc
+*.pyc
+blog/__pycache__/admin.cpython-310.pyc
+*.pyc
+*.pyc
+blog/__pycache__/models.cpython-310.pyc
