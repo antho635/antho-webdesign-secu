@@ -6,3 +6,4 @@ blog/__pycache__/admin.cpython-310.pyc
 *.pyc
 *.pyc
 blog/__pycache__/models.cpython-310.pyc
+*.pyc
